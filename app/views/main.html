@@ -1,0 +1,44 @@
+<div class="row marketing">
+  <div class="col-xs-6">
+  <h4>IT Recovery Specialists, LLC</h4>
+  <p>
+    When you need to... dispose of surplus equipment. <span class="hidden-xs">Trade-in or buy back computer or telecom equipment. IT Recovery Specialists, LLC provides services to transport, warehouse (store), remarket and/or dispose of surplus or junked telecommunications, computer, and/or network equipment, at no cost to your organization.</span>
+  </p>
+  </div>
+  <div class="col-xs-3 hidden-xs">
+    <img src="images/woman_leader.jpg" />
+  </div>
+  <div class="col-xs-3 visible-xs">
+    Call us from your smartphone by clicking here: <a href="tel:203-874-1800"><span class="glyphicon glyphicon-earphone"></span></a>
+  </div>
+</div>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-repeat="image in carousel"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/gallery/sm/e1.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>    
+    <div class="item"  ng-repeat="image in carousel" ng-if"$index != 0">
+      <img src="{{image.imageURL}}" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->

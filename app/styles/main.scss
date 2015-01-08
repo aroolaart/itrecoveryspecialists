@@ -1,0 +1,307 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$primary-color: #B7C8D8;
+$row-dark-color: #B7C8D8;
+
+body{
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0 0; 
+  background-size: 100%; 
+}
+
+.fRight {
+  float: right;
+}
+
+.fLeft {
+  float: left;
+}
+
+.range-label {
+  font-size: 1.4em;
+  top: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+h2, .h2 {
+  font-size: 20px;
+}
+
+h3, .h3 {
+  font-size: 16px;
+}
+
+/* Space out content a bit */
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.sm-menu-title {
+  margin: 15px 0px 0px 12px;
+  text-decoration: none;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.carousel-inner > .item > img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Custom page header */
+.header {
+  /* border-bottom: 1px solid #e5e5e5; */
+  margin-top: 130px;
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.navbar-header {
+  .company-name {
+    color: lightgray;
+    font-size: 18px;
+    margin: 20px 0px 0px 20px;  
+  }
+}
+
+.navbar-inverse {
+  background-color: rgba(0,0,0,.8);
+  border-color: #090909;
+}
+
+.navbar-collapse {
+  font-size: 12px;
+  color: white;
+}
+
+.navbar-nav > li > a {padding-top:12px !important; padding-bottom:6px !important;}
+.navbar {min-height:30px !important}
+
+/* Custom page footer */
+footer {
+  background-color:rgba(0, 0, 0, 0.5);
+  .info, .glyphicon-hand-down {
+    display: none;
+  }
+}
+
+.top-logo {
+  text-decoration: none;
+  font-size: 40px;
+  margin: 0px 12px 0px 12px;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting inventory content */
+div.filters {
+  background-color: lighten( $row-dark-color, 20% );
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid $row-dark-color;
+  margin: 0px 0px 0px 0px;
+  input {
+    height: 20px;
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  select {
+    height: 20px;
+    margin-right: 10px;
+    font-size: 14px !important;  
+  }
+}
+.inventory {
+  &div {
+    /* float: left; */
+  }
+  &.titles {
+    font-size:1.2em;
+    font-wieght:bold;
+    background-color: lighten( $row-dark-color, 20% );
+    border: 1px solid gray;
+  }
+  .mfg, .model, .description, .qty {
+    vertical-align: top;
+  }
+  &.item {
+    &:hover {
+      background: white;
+      border: 1px solid black;
+    }
+  }
+}
+
+.no-results {
+  border-radius: 4px;
+  border: 1px solid black;
+  float: left;
+  color: red;
+  font-size: 24px;
+  height: 60px;
+  width: 95%;
+  margin: 10px;
+  background-color: #f9fbfc;
+  padding: 12px;
+}
+
+/*  colored rows  */
+.item:nth-child(even){
+  background: $row-dark-color;
+}
+.item:nth-child(odd){
+  background: lighten( $row-dark-color, 10% );
+}
+
+/* Press */
+div.press img {
+  width: 100%;
+  border: 1px solid black;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+@media all and (max-width: 1200px) { /* screen size until 1200px */
+    body {
+        font-size: 1.5em; /* 1.5x default size */
+        background-image: url('../images/top-banner-lg.jpg');
+        padding-top: 0px;
+        padding-bottom: 20px;
+        .container.main {
+          margin-top: 100px;
+        }
+    }
+}
+@media all and (max-width: 1024px) { 
+    body {
+        font-size: 1.2em; /* 1.2x default size */
+        background-image: url('../images/top-banner-md.jpg');
+        background-position: 0px 20px;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        .container.main {
+          margin-top: 90px;
+        }        
+    }
+}
+@media all and (max-width: 640px) { 
+    body {
+        font-size: 0.9em; /* 0.8x default size */
+        background-image: url('../images/top-banner-sm.jpg');
+        background-position: 0px 40px;
+        padding-top: 0px;
+        padding-bottom: 20px;      
+        .container.main {
+          margin-top: 0px;
+        }    
+    }
+}
+
+@media all and (max-width: 320px) { 
+    body {
+        font-size: 0.9em; /* 0.8x default size */
+        background-image: url('../images/top-banner-sm.jpg');
+        background-position: 0px 40px;
+        padding-top: 0px;
+        padding-bottom: 20px;      
+        .container.main {
+          margin-top: -10px;
+        }    
+        .navbar-header {
+          .company-name {
+            color: lightgray;
+            font-size: 12px;
+            margin: 20px 0px 0px 20px;  
+          }
+        }
+        .navbar-nav {padding-top:4px !important; padding-bottom:4px !important;}
+        .navbar {min-height:20px !important}
+
+        glyphicon.glyphicon-hand-up, glyphicon.glyphicon-hand-up {
+          padding: 0px;
+        }
+        .navbar-inverse {
+          background-color: rgba(0,0,0,.8);
+          border-color: #090909;
+        }
+
+        .navbar-collapse {
+          font-size: 12px;
+          color: white;
+        }
+        .no-results {
+          font-size: 14px;
+        }
+        .range-label {
+          font-size: 1.0em;
+          top: 14px;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        .filters {
+          input {
+            width: 120px;
+          }
+        }
+    }
+}
+
+

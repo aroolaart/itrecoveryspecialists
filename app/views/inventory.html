@@ -1,0 +1,53 @@
+<div class="filters row">
+  <div class="col-xs-6">
+    Search: <input ng-model="search.$"> 
+  </div>
+  <div class="col-xs-6">
+    Items per page: 
+    <select ng-model='limit' ng-init="limit=20">
+      <option value='10'>Show 10 per page</option>
+      <option value='15'>Show 15 per page</option>
+      <option value='20'>Show 20 per page</option>
+      <option value='50'>Show 50 per page</option>
+      <option value='100'>Show 100 per page</option>
+      <option value='200'>Show 200 per page</option>
+    </select>
+  </div>
+</div>
+
+<div class="no-results" ng-show="(inventory | filter:search).length == 0">Sorry, no results were found, please modify your search.</div>
+
+<div ng-show="(inventory | filter:search).length > 0">
+  <dir-pagination-controls></dir-pagination-controls>
+
+  <div class="row inventory titles">
+      <div class="col-xs-2 mfg">
+        MAN
+      </div>
+      <div class="col-xs-3 model">
+        MODEL
+      </div>     
+      <div class="col-xs-5 description">
+        DESCRIPTION
+      </div> 
+      <div class="col-xs-1 qty">
+        QTY
+      </div>     
+  </div>
+</div>
+
+<div class="row inventory item" dir-paginate="item in inventory | filter:search:strict | itemsPerPage:limit ">
+  <div class="col-xs-2 mfg">
+    {{item.mfg}}
+  </div>
+  <div class="col-xs-3 model">
+    {{item.model}}
+  </div>     
+  <div class="col-xs-5 description">
+    {{item.description}}
+  </div> 
+  <div class="col-xs-1 qty">
+    {{item.qty}}
+  </div>     
+</div>
+
