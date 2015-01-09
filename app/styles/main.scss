@@ -28,6 +28,56 @@ body{
   margin-bottom: 20px;
 }
 
+#share {
+  position: absolute;
+  top: 220px;
+  right: 0px;
+  width: 238px;
+  padding: 3px 0px;
+  height: 42px;
+  border: 1px solid $primary-color;
+  border-radius: 4px;
+  div {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+    background-repeat: no-repeat;
+    background-image: url("../images/social-sprite2.png");
+    overflow: hidden;
+    background-position: -1000 -1000;
+    &.label {
+      width: 68px;
+      padding-top: 9px;
+      font-size: 12px;
+      margin-right: 4px;
+      color: black;
+      background: none;
+    }
+    &.facebook {
+      background-position: -96px 0px;
+      &:hover {
+        background-position: -96px -32px;
+      }
+    }
+    &.twitter {
+      background-position: 0px 0px;
+      &:hover {
+        background-position: 0px -32px;
+      }    }
+    &.google {
+      background-position: -32px 0px;
+      &:hover {
+        background-position: -32px -32px;
+      }    }
+    &.linkedin {
+      background-position: -64px 0px;
+      &:hover {
+        background-position: -64px -32px;
+      }    }  
+  }
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -257,6 +307,9 @@ div.press img {
 
 @media all and (max-width: 320px) { 
     body {
+        #share {
+          top: 100px;
+        }
         font-size: 0.9em; /* 0.8x default size */
         background-image: url('../images/top-banner-sm.jpg');
         background-position: 0px 40px;
