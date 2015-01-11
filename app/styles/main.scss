@@ -5,12 +5,19 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 $primary-color: #B7C8D8;
 $row-dark-color: #B7C8D8;
+$banner-height: 240;
 
 body{
+  padding-bottom: 20px;
+}
+
+.banner {  
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: 0 0; 
   background-size: 100%; 
+  height: ($banner-height)px;
+  width: 100%;
 }
 
 .fRight {
@@ -29,14 +36,16 @@ body{
 }
 
 #share {
-  position: absolute;
-  top: 220px;
-  right: 0px;
+  position: relative;
+  float: right;
+  margin-top: 19%;
+  right: 10px;
   width: 238px;
-  padding: 3px 0px;
+  padding: 4px 0px;
   height: 42px;
-  border: 1px solid $primary-color;
+  /* border: 1px solid $primary-color;
   border-radius: 4px;
+  */
   div {
     display: inline-block;
     width: 32px;
@@ -64,17 +73,20 @@ body{
       background-position: 0px 0px;
       &:hover {
         background-position: 0px -32px;
-      }    }
+      }    
+    }
     &.google {
       background-position: -32px 0px;
       &:hover {
         background-position: -32px -32px;
-      }    }
+      }    
+    }
     &.linkedin {
       background-position: -64px 0px;
       &:hover {
         background-position: -64px -32px;
-      }    }  
+      }    
+    }  
   }
 }
 
@@ -99,8 +111,8 @@ h3, .h3 {
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .sm-menu-title {
   margin: 15px 0px 0px 12px;
@@ -119,7 +131,7 @@ h3, .h3 {
 /* Custom page header */
 .header {
   /* border-bottom: 1px solid #e5e5e5; */
-  margin-top: 130px;
+  margin-top: 0px;
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -185,7 +197,7 @@ div.filters {
   border-radius: 4px;
   padding: 8px;
   border: 1px solid $row-dark-color;
-  margin: 0px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
   input {
     height: 20px;
     margin-right: 10px;
@@ -248,6 +260,10 @@ div.press img {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  .banner {
+    background-image: url('../images/top-banner-lg.jpg');
+    height: $banner-height + px;
+  }
   .container {
     max-width: 730px;
   }
@@ -256,12 +272,12 @@ div.press img {
   .header,
   .marketing,
   .footer {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
@@ -271,53 +287,113 @@ div.press img {
 
 @media all and (max-width: 1200px) { /* screen size until 1200px */
     body {
+        .banner {
+          background-image: url('../images/top-banner-lg.jpg');
+          height: $banner-height + px;
+        }
         font-size: 1.5em; /* 1.5x default size */
-        background-image: url('../images/top-banner-lg.jpg');
         padding-top: 0px;
         padding-bottom: 20px;
         .container.main {
-          margin-top: 100px;
+          margin-top: 0px;
         }
     }
 }
 @media all and (max-width: 1024px) { 
     body {
+        .banner {
+          background-image: url('../images/top-banner-md.jpg');
+          height: ($banner-height - 50) + px;
+        }
         font-size: 1.2em; /* 1.2x default size */
-        background-image: url('../images/top-banner-md.jpg');
-        background-position: 0px 20px;
         padding-top: 0px;
         padding-bottom: 20px;
         .container.main {
-          margin-top: 90px;
+          margin-top: 30px;
         }        
+        #share {
+          div {
+            &.facebook {
+              background-position: -96px -32px;
+            }
+            &.twitter {
+              background-position: 0px -32px;
+            }
+            &.google {
+              background-position: -32px -32px;
+            }
+            &.linkedin {
+              background-position: -64px -32px;
+            }
+          }
+        }
     }
 }
 @media all and (max-width: 640px) { 
     body {
+        .banner {
+          background-image: url('../images/top-banner-sm.jpg');
+          height: ($banner-height - 90) + px;
+        }
         font-size: 0.9em; /* 0.8x default size */
-        background-image: url('../images/top-banner-sm.jpg');
-        background-position: 0px 40px;
         padding-top: 0px;
         padding-bottom: 20px;      
         .container.main {
           margin-top: 0px;
-        }    
+        } 
+        #share {
+          margin-top: 0px;
+          div {
+            &.facebook {
+              background-position: -96px -32px;
+            }
+            &.twitter {
+              background-position: 0px -32px;
+            }
+            &.google {
+              background-position: -32px -32px;
+            }
+            &.linkedin {
+              background-position: -64px -32px;
+            }
+          }
+        }           
     }
 }
 
 @media all and (max-width: 320px) { 
     body {
+        .banner {
+          /* background-image: url('../images/top-banner-sm.jpg'); */
+          background: transparent;
+          height: ($banner-height - 196) + px;
+        }
         #share {
-          top: 100px;
+          margin-top: 0px;
+          div {
+            &.facebook {
+              background-position: -96px -32px;
+            }
+            &.twitter {
+              background-position: 0px -32px;
+            }
+            &.google {
+              background-position: -32px -32px;
+            }
+            &.linkedin {
+              background-position: -64px -32px;
+            }
+          }
         }
         font-size: 0.9em; /* 0.8x default size */
-        background-image: url('../images/top-banner-sm.jpg');
-        background-position: 0px 40px;
         padding-top: 0px;
         padding-bottom: 20px;      
         .container.main {
-          margin-top: -10px;
+          margin-top: 0px;
         }    
+        .banner {
+          margin-top: 50px;
+        }
         .navbar-header {
           .company-name {
             color: lightgray;
@@ -347,7 +423,7 @@ div.press img {
           font-size: 1.0em;
           top: 14px;
           font-weight: bold;
-          margin-bottom: 20px;
+          margin-bottom: 0px;
         }
         .filters {
           input {
