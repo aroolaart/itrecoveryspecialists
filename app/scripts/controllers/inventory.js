@@ -28,6 +28,9 @@ var app = angular.module('arcmobileApp', [
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/mgmt', {
+        templateUrl: 'views/mgmt.html'
+      })      
       .when('/services', {
         templateUrl: 'views/services.html'
       })      
