@@ -119,6 +119,9 @@ app.controller('MainCtrl', function ($scope) {
    $('.glyphicon-hand-up').show();
  });
 
+$(document).ready(function(){
+     $("#maincarousel").carousel();
+});
 
 
 

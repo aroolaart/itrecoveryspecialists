@@ -1,5 +1,6 @@
 {
 	"carousel": [
+		{"imageURL":"images/gallery/sm/e26.jpg"},	
 		{"imageURL":"images/gallery/sm/e8.jpg"},
 		{"imageURL":"images/gallery/sm/e9.jpg"},
 		{"imageURL":"images/gallery/sm/e10.jpg"},
@@ -12,8 +13,6 @@
 		{"imageURL":"images/gallery/sm/e17.jpg"},
 		{"imageURL":"images/gallery/sm/e18.jpg"},
 		{"imageURL":"images/gallery/sm/e24.jpg"},
-		{"imageURL":"images/gallery/sm/e25.jpg"},
-		{"imageURL":"images/gallery/sm/e26.jpg"},
 		{"imageURL":"images/gallery/sm/e27.jpg"},
 		{"imageURL":"images/gallery/sm/e28.jpg"},
 		{"imageURL":"images/gallery/sm/e29.jpg"},

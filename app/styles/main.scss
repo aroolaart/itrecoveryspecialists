@@ -122,6 +122,11 @@ h3, .h3 {
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
+.carousel-indicators {
+    background: rgba(0,0,0,.5);
+    border-radius: 6px;
+    padding: 4px;
+}
 
 .carousel-inner > .item > img {
   margin: 0 auto;
@@ -285,7 +290,7 @@ div.press img {
   }
 }
 
-@media all and (max-width: 1200px) { /* screen size until 1200px */
+@media all and (max-width: 2000px) { /* screen size until 1200px */
     body {
         .banner {
           background-image: url('../images/top-banner-2000x375.jpg');
@@ -293,7 +298,7 @@ div.press img {
         }
         font-size: 1.5em; /* 1.5x default size */
         padding-top: 0px;
-        padding-bottom: 20px;
+        padding-bottom: 40px;
         .container.main {
           margin-top: 0px;
         }
@@ -307,7 +312,7 @@ div.press img {
         }
         font-size: 1.2em; /* 1.2x default size */
         padding-top: 0px;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         .container.main {
           margin-top: 30px;
         }        
@@ -337,7 +342,7 @@ div.press img {
         }
         font-size: 0.9em; /* 0.8x default size */
         padding-top: 0px;
-        padding-bottom: 20px;      
+        padding-bottom: 30px;      
         .container.main {
           margin-top: 0px;
         } 
@@ -387,7 +392,7 @@ div.press img {
         }
         font-size: 0.9em; /* 0.8x default size */
         padding-top: 0px;
-        padding-bottom: 20px;      
+        padding-bottom: 30px;      
         .container.main {
           margin-top: 0px;
         }    
