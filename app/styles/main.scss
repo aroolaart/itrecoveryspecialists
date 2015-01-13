@@ -20,14 +20,6 @@ body{
   width: 100%;
 }
 
-.fRight {
-  float: right;
-}
-
-.fLeft {
-  float: left;
-}
-
 .range-label {
   font-size: 1.1em;
   top: 14px;
@@ -278,13 +270,18 @@ div.filters {
 }
 
 /* Press */
-div.press img {
-  width: 100%;
+.left-rail img {
+  width: 80%;
   border: 1px solid black;
+  box-shadow: 4px 4px 3px #888888;
 }
 
 .fluid-img {
   width: 100%;
+}
+
+.service-pic {
+  width:100%;
 }
 
 /* Responsive: Portrait tablets and up */

@@ -41,7 +41,9 @@ var app = angular.module('arcmobileApp', [
         templateUrl: 'views/inventory.html',
         controller: 'InventoryCtrl'
       })
-      .when('/contact', {
+      .when('/faq', {
+        templateUrl: 'views/faq.html',
+      })      .when('/contact', {
         templateUrl: 'views/contact.html',
       })
       .otherwise({
@@ -114,7 +116,23 @@ app.controller('MainCtrl', function ($scope) {
     ];
   });
 
+// Directive to handle menu highlighting
+app.directive("myDataToggle", function(){
+    function link(scope, element, attrs) {
+        var e = angular.element(element);
+        e.on('click', function(){
+            e.parent().parent().children().removeClass('active');
+            e.parent().addClass("active");
+        })
+    }
+    return {
+        restrict: 'A',
+        link: link
+    };
+});
+
 $(document).ready(function(){
+
   $("#maincarousel").carousel();
   $('.navbar-toggle').on('click',function(){
     $('.container-fluid .share').slideUp("fast");
