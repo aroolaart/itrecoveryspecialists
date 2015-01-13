@@ -128,6 +128,12 @@ $(document).ready(function(){
         $('.container-fluid .share').slideDown("slow");
         //$(this).off('scroll');
     }
+    if (scrollPosition <= 50 && $('.container-fluid .share').is(":visible")) {
+        //alert("scrolled");
+        $('.banner .share').css("visibility","visible");
+        $('.container-fluid .share').slideUp("fast");
+        //$(this).off('scroll');
+    }    
   });
   $('.glyphicon-hand-up').on('click',function(){
      $(this).hide();

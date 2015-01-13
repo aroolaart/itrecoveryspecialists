@@ -17,13 +17,14 @@
 </div>
 
 <div class="row">
-  <div class="no-results col-xs-12" ng-show="(inventory | filter:search).length == 0">Sorry, no results were found, please modify your search.
+  <div class=" no-results col-xs-11 panel panel-danger" ng-hide="inventory" ng-show="(inventory | filter:search).length == 0">
+    <div class="panel-heading">Sorry, no results were found, please modify your search.</div>
   </div>
 </div>
 
 <div class="row" ng-show="(inventory | filter:search).length > 0">
   <dir-pagination-controls class="col-xs-12"></dir-pagination-controls>
-    <dir class="col-xs-12">
+    <dir class="col-xs-12 titles">
       <div class="col-xs-2 mfg">
         MAN
       </div>
@@ -39,7 +40,7 @@
     </dir>    
 </div>
 
-<div class="row inventory item" dir-paginate="item in inventory | filter:search:strict | itemsPerPage:limit ">
+<div class="row inventory item" ng-cloak dir-paginate="item in inventory | filter:search:strict | itemsPerPage:limit ">
   <div class="col-xs-12">
     <div class="col-xs-2 mfg col">
       {{item.mfg}}

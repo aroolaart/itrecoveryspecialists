@@ -8,7 +8,7 @@ $row-dark-color: #B7C8D8;
 $banner-height: 240;
 
 body{
-  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .banner {  
@@ -29,7 +29,7 @@ body{
 }
 
 .range-label {
-  font-size: 1.4em;
+  font-size: 1.1em;
   top: 14px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -169,22 +169,22 @@ h3, .h3 {
 .navbar-header {
   .company-name {
     color: lightgray;
-    font-size: 18px;
+    font-size: 20px;
     margin: 20px 0px 0px 20px;  
   }
 }
 
 .navbar-inverse {
-  background-color: rgba(0,0,0,.8);
+  /* background-color: rgba(0,0,0,.8); */
   border-color: #090909;
 }
 
 .navbar-collapse {
-  font-size: 12px;
+  font-size: 14px;
   color: white;
 }
 
-.navbar-nav > li > a {padding-top:12px !important; padding-bottom:6px !important;}
+.navbar-nav > li > a {padding-top:10px !important; padding-bottom:6px !important;}
 .navbar {min-height:30px !important}
 
 /* Custom page footer */
@@ -220,7 +220,7 @@ footer {
 div.filters {
   background-color: lighten( $row-dark-color, 20% );
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 0px 8px 0px;
   border: 1px solid $row-dark-color;
   margin: 20px 0px 0px 0px;
   input {
@@ -234,42 +234,40 @@ div.filters {
     font-size: 14px !important;  
   }
 }
+  .titles {
+    color: white;
+    font-size:1.2em;
+    font-wieght:bold;
+    background-color: darken( $row-dark-color, 20% );
+    border: 1px solid gray;
+    margin-bottom: 0px;
+  }
 .inventory {
   &div {
     /* float: left; */
-  }
-  &.titles {
-    font-size:1.2em;
-    font-wieght:bold;
-    background-color: lighten( $row-dark-color, 20% );
-    border: 1px solid gray;
   }
   .mfg, .model, .description, .qty {
     vertical-align: top;
   }
   &.item {
+    border-bottom: 1px solid darken( $row-dark-color, 20% );
     &:hover {
       background: white;
-      border: 1px solid black;
+      border-bottom: 1px solid black;
     }
   }
 }
 
 .no-results {
+  margin-top: 12px;
   border-radius: 4px;
-  border: 1px solid black;
-  float: left;
   color: red;
-  font-size: 24px;
-  height: 60px;
-  width: 95%;
-  margin: 10px;
-  background-color: #f9fbfc;
-  padding: 12px;
+  font-size: 16px;
 }
 
 .item > div {
   padding: 4px 0px;
+  border: 1px solid darken( $row-dark-color, 10% );;
 }
 /*  colored rows  */
 .item:nth-child(even) {
@@ -439,7 +437,7 @@ div.press img {
         .navbar-header {
           .company-name {
             color: lightgray;
-            font-size: 12px;
+            font-size: 14px;
             margin: 20px 0px 0px 20px;  
           }
         }
@@ -450,12 +448,12 @@ div.press img {
           padding: 0px;
         }
         .navbar-inverse {
-          background-color: rgba(0,0,0,.8);
+          /* background-color: rgba(0,0,0,.8); */
           border-color: #090909;
         }
 
         .navbar-collapse {
-          font-size: 12px;
+          font-size: 14px;
           color: white;
         }
         .no-results {
