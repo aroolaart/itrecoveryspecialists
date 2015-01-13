@@ -1,9 +1,9 @@
 
 <div class="filters row">
-  <div class="col-xs-5 col-md-5 col-lg-5">
+  <div class="col-xs-6">
     Search: <input ng-model="search.$"> 
   </div>
-  <div class="col-xs-6 col-md-6 col-lg-6">
+  <div class="col-xs-6">
     Items per page: 
     <select ng-model='limit' ng-init="limit=20">
       <option value='10'>Show 10 per page</option>
@@ -16,13 +16,14 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="no-results col-xs-12" ng-show="(inventory | filter:search).length == 0">Sorry, no results were found, please modify your search.
+  </div>
+</div>
 
-<div class="no-results" ng-show="(inventory | filter:search).length == 0">Sorry, no results were found, please modify your search.</div>
-
-<div ng-show="(inventory | filter:search).length > 0">
-  <dir-pagination-controls></dir-pagination-controls>
-
-  <div class="row inventory titles">
+<div class="row" ng-show="(inventory | filter:search).length > 0">
+  <dir-pagination-controls class="col-xs-12"></dir-pagination-controls>
+    <dir class="col-xs-12">
       <div class="col-xs-2 mfg">
         MAN
       </div>
@@ -34,22 +35,24 @@
       </div> 
       <div class="col-xs-1 qty">
         QTY
-      </div>     
-  </div>
+      </div> 
+    </dir>    
 </div>
 
 <div class="row inventory item" dir-paginate="item in inventory | filter:search:strict | itemsPerPage:limit ">
-  <div class="col-xs-2 mfg">
-    {{item.mfg}}
-  </div>
-  <div class="col-xs-3 model">
-    {{item.model}}
-  </div>     
-  <div class="col-xs-5 description">
-    {{item.description}}
-  </div> 
-  <div class="col-xs-1 qty">
-    {{item.qty}}
+  <div class="col-xs-12">
+    <div class="col-xs-2 mfg col">
+      {{item.mfg}}
+    </div>
+    <div class="col-xs-3 model col">
+      {{item.model}}
+    </div>     
+    <div class="col-xs-5 description col">
+      {{item.description}}
+    </div> 
+    <div class="col-xs-1 qty col">
+      {{item.qty}}
+    </div>
   </div>     
 </div>
 

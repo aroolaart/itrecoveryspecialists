@@ -41,6 +41,9 @@ var app = angular.module('arcmobileApp', [
         templateUrl: 'views/inventory.html',
         controller: 'InventoryCtrl'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -111,20 +114,31 @@ app.controller('MainCtrl', function ($scope) {
     ];
   });
 
- $('.glyphicon-hand-up').on('click',function(){
-   $(this).hide();
-   $('footer .info').show();
-   $('.glyphicon-hand-down').show();
- });
- $('.glyphicon-hand-down').on('click',function(){
-   $(this).hide();
-   $('footer .info').hide();
-   $('.glyphicon-hand-up').show();
- });
-
 $(document).ready(function(){
-     $("#maincarousel").carousel();
-});
-
+  $("#maincarousel").carousel();
+  $('.navbar-toggle').on('click',function(){
+    $('.container-fluid .share').slideUp("fast");
+    $('.banner .share').css("visibility","visible");      
+  });
+  $(window).on('scroll', function() {
+    var scrollPosition = $(this).scrollTop();
+    if (scrollPosition >= 100 && $('.container-fluid .share').is(":hidden")) {
+        //alert("scrolled");
+        $('.banner .share').css("visibility","hidden");
+        $('.container-fluid .share').slideDown("slow");
+        //$(this).off('scroll');
+    }
+  });
+  $('.glyphicon-hand-up').on('click',function(){
+     $(this).hide();
+     $('footer .info').show();
+     $('.glyphicon-hand-down').show();
+   });
+   $('.glyphicon-hand-down').on('click',function(){
+     $(this).hide();
+     $('footer .info').hide();
+     $('.glyphicon-hand-up').show();
+   });  
+})
 
 

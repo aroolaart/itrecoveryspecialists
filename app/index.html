@@ -14,77 +14,72 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="arcmobileApp">
+<body ng-app="arcmobileApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-      <div class="header">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="visible-xs sm-menu-title" href="#/"><img src="images/mobile-logo.png"/></a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/">Home</a></li>
-                        <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/about">Company</a></li>
-                            <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/mgmt">Management</a></li>
-                            </ul>
-                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/inventory">Inventory</a></li>
-                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/services">Services</a></li>
-                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/press">Press Releases</a></li>
-                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#inventory">FAQs</a></li>
-                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
+<!-- Add your site or application content here -->
+<div class="header">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="visible-xs sm-menu-title" href="#/"><img src="images/mobile-logo.png"/></a>
             </div>
-        </nav>
-        <div class="banner">
-            <div id="share">
-                <div class="label">Share this: </div>
-                <div class="facebook"></div>
-                <div class="twitter"></div>
-                <div class="google"></div>
-                <div class="linkedin"></div>
-            </div>
-        </div>        
-      </div>
 
-    <div class="container main">
-
-      <div ng-view=""></div>
-    </div>
-
-<!--    <div class="row footer visible-xs">
-        <div class="col-xs-2">
-            <span class="glyphicon glyphicon-hand-up"></span>
-            <span class="glyphicon glyphicon-hand-down"></span>
-        </div>
-        <div class="col-xs-10"> 
-            IT Recovery Specialists, LLC<br/>
-            <div class="info">
-                107 Research Drive<br/> 
-                Milford CT 06460<br/>
-                Tel: <a href="tel:203-874-1800">203-874-1800</a> (click to call)<br/>
-                Fax: 203-874-1804
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/">Home</a></li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/about">Company</a></li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/mgmt">Management</a></li>
+                        </ul>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/inventory">Inventory</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/services">Services</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/press">Press Releases</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/faq">FAQs</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/contact">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </div>
--->
+    </nav>
+    <div class="banner">
+        <div class="share">
+            <div class="label">Share this: </div>
+            <div class="facebook"></div>
+            <div class="twitter"></div>
+            <div class="google"></div>
+            <div class="linkedin"></div>
+        </div>
+    </div>        
+</div>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="left-rail col-md-2 hidden-xs hidden-sm">
+            <h2>PRESS:</h2>
+            <img src="images/press/smartmoney.jpg" />
+            <img src="images/press/fortune_mag.jpg" />
+            <img src="images/press/telecomfinders.jpg" />
+            <img src="images/press/cio_mag.jpg" />
+        </div>
+        <div class="col-md-8"> 
+            <div ng-view=""></div>
+        </div>
+        <div class="right-rail col-md-2 hidden-xs hidden-sm">
+            <img src="images/woman-leader.png" />
+        </div> 
+    </div> 
+</div>
 <footer>
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container">
@@ -105,6 +100,15 @@
         </div>
     </div>
 </footer>
+<div class="container-fluid visible-xs">
+   <div class="col-xs-12 share">
+        <div class="label">Share this: </div>
+        <div class="facebook"></div>
+        <div class="twitter"></div>
+        <div class="google"></div>
+        <div class="linkedin"></div>
+    </div>
+</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

@@ -35,7 +35,7 @@ body{
   margin-bottom: 10px;
 }
 
-#share {
+.share {
   position: relative;
   float: right;
   margin-top: 19%;
@@ -90,6 +90,23 @@ body{
   }
 }
 
+.container-fluid .share {
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.58);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.58);
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.58);
+  position: fixed;
+  top: 50px;
+  background: #7D92B8;
+  display:none;
+  width: 110%;
+  margin: 0px -15px 0px -15px;
+  padding-left: 100px;
+  z-index: 2000;
+  .label {
+    color: black;
+  }
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -131,6 +148,9 @@ h3, .h3 {
 .carousel-inner > .item > img {
   margin: 0 auto;
   width: 100%;
+}
+.carousel-caption {
+  margin-bottom: 30px;
 }
 
 /* Custom page header */
@@ -248,11 +268,14 @@ div.filters {
   padding: 12px;
 }
 
+.item > div {
+  padding: 4px 0px;
+}
 /*  colored rows  */
-.item:nth-child(even){
+.item:nth-child(even) {
   background: $row-dark-color;
 }
-.item:nth-child(odd){
+.item:nth-child(odd) {    
   background: lighten( $row-dark-color, 10% );
 }
 
@@ -262,6 +285,9 @@ div.press img {
   border: 1px solid black;
 }
 
+.fluid-img {
+  width: 100%;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -287,6 +313,17 @@ div.press img {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+.left-rail, .right-rail {
+  h2  {
+    color: $primary-color;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 6px;
+    border:1px solid #e4e4e4;
   }
 }
 
@@ -316,7 +353,7 @@ div.press img {
         .container.main {
           margin-top: 30px;
         }        
-        #share {
+        .share {
           div {
             &.facebook {
               background-position: -96px -32px;
@@ -346,7 +383,7 @@ div.press img {
         .container.main {
           margin-top: 0px;
         } 
-        #share {
+        .share {
           margin-top: 0px;
           div {
             &.facebook {
@@ -373,7 +410,7 @@ div.press img {
           background: transparent;
           height: ($banner-height - 196) + px;
         }
-        #share {
+        .share {
           margin-top: 0px;
           div {
             &.facebook {

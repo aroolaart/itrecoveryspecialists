@@ -1,15 +1,11 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-10">
-      <h4>When you need to...</h4> 
-      <ul>
-        <li>Dispose of surplus equipment</li> 
-        <li>Trade-in or buy back computer or telecom equipment</li> 
-      </ul>
-      <p><strong>IT Recovery Specialists, LLC</strong> provides services to transport, warehouse (store), remarket and/or dispose of surplus or junked telecommunications, computer, and/or network equipment, at no cost to your organization.</p>
+  <div class="col-xs-12">
+      <p class="lead"><strong>IT Recovery Specialists, LLC</strong> provides services to transport, warehouse (store), remarket and/or dispose of surplus or junked telecommunications, computer, and/or network equipment, at <strong>no cost to your organization</strong>.</p>
   </div>
 </div>
 <div class="row">
-  <div id="maincarousel" class="carousel slide" data-ride="carousel">
+<div class="col-xs-12 col-md-10">
+  <div id="maincarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#maincarousel" data-slide-to="{{$index}}" ng-repeat="image in carousel"></li>
@@ -21,7 +17,10 @@
         <img ng-src="images/gallery/sm/e25.jpg" alt="">
       </div>    
       <div class="item"  ng-repeat="image in carousel" ng-if"$index != 0">
-        <img src="{{image.imageURL}}" alt="">
+        <img ng-src="{{image.imageURL}}" alt="{{image.caption}}">
+        <div class="carousel-caption">
+          <h2>{{image.caption}}</h2>
+        </div>
       </div>
     </div>
    
@@ -33,4 +32,5 @@
       <span class="glyphicon glyphicon-chevron-right"></span>
     </span>
   </div> <!-- Carousel -->
+  </div>
 </div>
