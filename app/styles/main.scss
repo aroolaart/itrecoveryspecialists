@@ -40,6 +40,7 @@ body{
   */
   div {
     display: inline-block;
+    cursor: pointer;
     width: 32px;
     height: 32px;
     margin-right: 2px;
@@ -48,6 +49,7 @@ body{
     overflow: hidden;
     background-position: -1000 -1000;
     &.label {
+      cursor: default;
       width: 68px;
       padding-top: 9px;
       font-size: 12px;
@@ -67,13 +69,13 @@ body{
         background-position: 0px -32px;
       }    
     }
-    &.google {
+    &.linkedin {
       background-position: -32px 0px;
       &:hover {
         background-position: -32px -32px;
       }    
     }
-    &.linkedin {
+    &.google {
       background-position: -64px 0px;
       &:hover {
         background-position: -64px -32px;
@@ -274,6 +276,7 @@ div.filters {
   width: 80%;
   border: 1px solid black;
   box-shadow: 4px 4px 3px #888888;
+  margin-top: 8px;
 }
 
 .fluid-img {
@@ -282,6 +285,7 @@ div.filters {
 
 .service-pic {
   width:100%;
+  margin-bottom:20px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -356,10 +360,10 @@ div.filters {
             &.twitter {
               background-position: 0px -32px;
             }
-            &.google {
+            &.linkedin {
               background-position: -32px -32px;
             }
-            &.linkedin {
+            &.google {
               background-position: -64px -32px;
             }
           }
@@ -387,10 +391,10 @@ div.filters {
             &.twitter {
               background-position: 0px -32px;
             }
-            &.google {
+            &.linkedin {
               background-position: -32px -32px;
             }
-            &.linkedin {
+            &.google {
               background-position: -64px -32px;
             }
           }
@@ -414,10 +418,10 @@ div.filters {
             &.twitter {
               background-position: 0px -32px;
             }
-            &.google {
+            &.linkedin {
               background-position: -32px -32px;
             }
-            &.linkedin {
+            &.google {
               background-position: -64px -32px;
             }
           }

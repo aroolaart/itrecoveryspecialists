@@ -2,19 +2,24 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>IT Recovery Specialists</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="Keywords" content="IT Recovery Specialists, Asset Recovery, Asset Recovery Specialists, Sun, IBM, Cisco, Computers, Computer Equipment, Remarket Equipment, Surplus Equipment, telecomm">
+    <meta name="Description" content="IT Recovery Specialists - the leader in buying and selling surplus computer and telecomm equipment, we've worked with the best companies and equipment.">
+    <title>IT Recovery Specialists, LLC - the leader in buying and selling used Sun, Cisco, and more telecommunications equipment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <meta property="og:title" content="IT Recovery Specialists" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.itrecoveryspecialists.com/" />
+    <meta property="og:image" content="http://www.itrecoveryspecialists.com/images/itrs600x315.jpg" />
+    <link rel="stylesheet" href="styles/main.css" />
     <!-- endbuild -->
   </head>
-<body ng-app="arcmobileApp">
+<body ng-app="itrsApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -55,10 +60,10 @@
     <div class="banner">
         <div class="share">
             <div class="label">Share this: </div>
-            <div class="facebook"></div>
-            <div class="twitter"></div>
-            <div class="google"></div>
-            <div class="linkedin"></div>
+            <a href="" title="Share on Facebook" target="_blank"><div class="facebook"></div></a>
+            <a href="" title="Share on Twitter" target="_blank"><div class="twitter"></div></a>
+            <a href="" title="Share on Linkedin" target="_blank"><div class="linkedin"></div></a>
+            <a href="" title="Share on Google" target="_blank"><div class="google"></div></a>
         </div>
     </div>        
 </div>
@@ -76,12 +81,12 @@
             </a>
         </div>
         <div class="col-md-8"> 
-            <div ng-view=""></div>
+            <div ng-view="" autoscroll="true"></div>
         </div>
         <div class="right-rail col-md-2 hidden-xs hidden-sm">
             <h5>Marketing Agreement</h5>
             <hr>
-            <p>Click <a href="downloads/ITRS-AGREEMENT.pdf" target="_blannk">here <span class="glyphicon glyphicon-download-alt"></span></a> to download marking agreement</p>
+            <p>Click <a href="downloads/ITRS-AGREEMENT.pdf" target="_blannk">here <span class="glyphicon glyphicon-download-alt"></span></a> to download our marking agreement</p>
         </div> 
     </div> 
 </div>
@@ -90,8 +95,8 @@
         <div class="container">
             <div class="navbar-header">
             <span class="company-name">IT Recovery Specialists, LLC</span>
-                    <span class="glyphicon glyphicon-hand-up navbar-toggle" data-toggle="collapse" data-target="#footer-body"></span>
-                    <span class="glyphicon glyphicon-hand-down navbar-toggle" data-toggle="collapse" data-target="#footer-body"></span>          
+                <span class="glyphicon glyphicon-hand-up navbar-toggle" data-toggle="collapse" data-target="#footer-body"></span>
+                <span class="glyphicon glyphicon-hand-down navbar-toggle" data-toggle="collapse" data-target="#footer-body"></span>          
             </div>
             <div class="navbar-collapse collapse" id="footer-body">             
                 <div class="info">
@@ -108,10 +113,10 @@
 <div class="container-fluid visible-xs">
    <div class="col-xs-12 share">
         <div class="label">Share this: </div>
-        <div class="facebook"></div>
-        <div class="twitter"></div>
-        <div class="google"></div>
-        <div class="linkedin"></div>
+        <a href="" title="Share on Facebook" target="_blank"><div class="facebook"></div></a>
+        <a href="" title="Share on Twitter" target="_blank"><div class="twitter"></div></a>
+        <a href="" title="Share on Linkedin" target="_blank"><div class="linkedin"></div></a>
+        <a href="" title="Share on Google" target="_blank"><div class="google"></div></a>
     </div>
 </div>
 
@@ -159,7 +164,8 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/controllers/inventory.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/share.js"></script>
         <script src="scripts/controllers/dirPagination.js"></script>
         
         <!-- endbuild -->
