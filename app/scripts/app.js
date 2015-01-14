@@ -111,7 +111,7 @@ $(document).ready(function(){
 
   $("#maincarousel").carousel();
   $('.navbar-toggle').on('click',function(){
-    $('.container-fluid .share').slideUp("fast");
+    $('.share.dropdown').slideUp("fast");
     $('.banner .share').css("visibility","visible");      
   });
   $(window).on('scroll', function() {

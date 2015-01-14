@@ -188,6 +188,13 @@ footer {
     display: none;
   }
 }
+#footer-body .phone {
+  font-size: 14px;
+  span {
+    margin: 10px 10px 0px 0px;
+    font-size: 28px;
+  }
+}
 
 .top-logo {
   text-decoration: none;
@@ -417,7 +424,7 @@ div.filters {
           background: transparent;
           height: 86px;
           .share {
-            margin-top: 50px;
+            margin-top: 52px;
           }
         }
         .share {
@@ -445,6 +452,7 @@ div.filters {
         }    
         .navbar-header {
           margin-top: 4px;
+          margin-bottom: 4px;
           .company-name {
             color: lightgray;
             font-size: 11px;
@@ -465,7 +473,7 @@ div.filters {
         }
 
         .navbar-collapse {
-          font-size: 14px;
+          font-size: 12px;
           color: white;
         }
         .no-results {
