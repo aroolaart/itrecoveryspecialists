@@ -11,6 +11,9 @@ body{
   margin-bottom: 40px;
 }
 
+.container, .container-fluid, .banner {
+  max-width: 1170px !important;
+}
 .banner {  
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -35,9 +38,6 @@ body{
   width: 238px;
   padding: 4px 0px;
   height: 42px;
-  /* border: 1px solid $primary-color;
-  border-radius: 4px;
-  */
   div {
     display: inline-block;
     cursor: pointer;
@@ -84,7 +84,7 @@ body{
   }
 }
 
-.container-fluid .share {
+.container-fluid .share.dropdown {
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.58);
   -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.58);
   box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.58);
@@ -163,7 +163,7 @@ h3, .h3 {
 .navbar-header {
   .company-name {
     color: lightgray;
-    font-size: 20px;
+    font-size: 14px;
     margin: 20px 0px 0px 20px;  
   }
 }
@@ -255,13 +255,15 @@ div.filters {
 .no-results {
   margin-top: 12px;
   border-radius: 4px;
-  color: red;
-  font-size: 16px;
+  h5 {
+    color: red;
+    font-size: 16px;  
+  }
 }
 
 .item > div {
   padding: 4px 0px;
-  border: 1px solid darken( $row-dark-color, 10% );;
+  /* border: 1px solid darken( $row-dark-color, 10% );; */
 }
 /*  colored rows  */
 .item:nth-child(even) {
@@ -349,7 +351,7 @@ div.filters {
         font-size: 1.2em; /* 1.2x default size */
         padding-top: 0px;
         padding-bottom: 30px;
-        .container.main {
+        .container-fluid.main {
           margin-top: 30px;
         }        
         .share {
@@ -379,7 +381,7 @@ div.filters {
         font-size: 0.9em; /* 0.8x default size */
         padding-top: 0px;
         padding-bottom: 30px;      
-        .container.main {
+        .container-fluid.main {
           margin-top: 0px;
         } 
         .share {
@@ -402,15 +404,24 @@ div.filters {
     }
 }
 
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){ 
+    //iPhone 6 and iPhone 6+ portrait
+    .container-fluid.main {
+      margin-top: 60px;
+    }
+}
+
 @media all and (max-width: 320px) { 
     body {
         .banner {
-          /* background-image: url('../images/top-banner-640x120.jpg'); */
           background: transparent;
-          height: ($banner-height - 196) + px;
+          height: 86px;
+          .share {
+            margin-top: 50px;
+          }
         }
         .share {
-          margin-top: 0px;
+          display: block;
           div {
             &.facebook {
               background-position: -96px -32px;
@@ -429,21 +440,21 @@ div.filters {
         font-size: 0.9em; /* 0.8x default size */
         padding-top: 0px;
         padding-bottom: 30px;      
-        .container.main {
+        .container-fluid.main {
           margin-top: 0px;
         }    
-        .banner {
-          margin-top: 56px;
-        }
         .navbar-header {
+          margin-top: 4px;
           .company-name {
             color: lightgray;
-            font-size: 14px;
-            margin: 20px 0px 0px 20px;  
+            font-size: 11px;
           }
         }
+        .navbar-toggle {
+          margin-top:2px;
+        }
         .navbar-nav {padding-top:4px !important; padding-bottom:4px !important;}
-        .navbar {min-height:20px !important}
+        .navbar .navbar-fixed-bottom {max-height:36px !important}
 
         glyphicon.glyphicon-hand-up, glyphicon.glyphicon-hand-up {
           padding: 0px;

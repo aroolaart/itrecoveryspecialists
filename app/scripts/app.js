@@ -119,16 +119,17 @@ $(document).ready(function(){
     if (scrollPosition >= 100 && $('.container-fluid .share').is(":hidden")) {
         //alert("scrolled");
         $('.banner .share').css("visibility","hidden");
-        $('.container-fluid .share').slideDown("slow");
+        $('.share.dropdown').slideDown("slow");
         //$(this).off('scroll');
     }
     if (scrollPosition <= 50 && $('.container-fluid .share').is(":visible")) {
         //alert("scrolled");
         $('.banner .share').css("visibility","visible");
-        $('.container-fluid .share').slideUp("fast");
+        $('.share.dropdown').slideUp("fast");
         //$(this).off('scroll');
     }    
   });
+
   $('.glyphicon-hand-up').on('click',function(){
      $(this).hide();
      $('footer .info').show();

@@ -57,28 +57,31 @@
             </div>
         </div>
     </nav>
-    <div class="banner">
-        <div class="share">
-            <div class="label">Share this: </div>
-            <a href="" title="Share on Facebook" target="_blank"><div class="facebook"></div></a>
-            <a href="" title="Share on Twitter" target="_blank"><div class="twitter"></div></a>
-            <a href="" title="Share on Linkedin" target="_blank"><div class="linkedin"></div></a>
-            <a href="" title="Share on Google" target="_blank"><div class="google"></div></a>
-        </div>
-    </div>        
 </div>
 
 <div class="container-fluid">
     <div class="row">
+        <div class="banner">
+            <div class="share">
+                <div class="label">Share this: </div>
+                <a href="" title="Share on Facebook" target="_blank"><div class="facebook"></div></a>
+                <a href="" title="Share on Twitter" target="_blank"><div class="twitter"></div></a>
+                <a href="" title="Share on Linkedin" target="_blank"><div class="linkedin"></div></a>
+                <a href="" title="Share on Google" target="_blank"><div class="google"></div></a>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div class="container-fluid main">
+    <div class="row">
         <div class="left-rail col-md-2 hidden-xs hidden-sm">
             <h2>PRESS:</h2>
-            <small>Click to see articles</small>
-            <a href="#/press">
+            <small>Click to open articles <br/>(opens new window)</small>
                 <img src="images/press/smartmoney.jpg" />
-                <img src="images/press/fortune_mag.jpg" />
+                <a href="http://archive.fortune.com/magazines/fortune/fortune_archive/2002/02/04/317491/index.htm" target="_blank"><img src="images/press/fortune_mag.jpg" /></a>
                 <img src="images/press/telecomfinders.jpg" />
                 <img src="images/press/cio_mag.jpg" />
-            </a>
         </div>
         <div class="col-md-8"> 
             <div ng-view="" autoscroll="true"></div>
@@ -111,7 +114,7 @@
     </div>
 </footer>
 <div class="container-fluid visible-xs">
-   <div class="col-xs-12 share">
+   <div class="col-xs-12 share dropdown">
         <div class="label">Share this: </div>
         <a href="" title="Share on Facebook" target="_blank"><div class="facebook"></div></a>
         <a href="" title="Share on Twitter" target="_blank"><div class="twitter"></div></a>
