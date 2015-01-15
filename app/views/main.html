@@ -16,7 +16,7 @@
       <div class="item active">
         <img ng-src="images/gallery/sm/e25.jpg" alt="">
       </div>    
-      <div class="item"  ng-repeat="image in carousel" ng-if"$index != 0">
+      <div class="item"  ng-repeat="image in carousel" ng-if="$index != 0">
         <img ng-src="{{image.imageURL}}" alt="{{image.caption}}">
         <div class="carousel-caption">
           <h2>{{image.caption}}</h2>

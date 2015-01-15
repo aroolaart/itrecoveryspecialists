@@ -14,6 +14,11 @@ body{
 .container, .container-fluid, .banner {
   max-width: 1170px !important;
 }
+
+.main h2 {
+  color: darken($primary-color, 30%);
+}
+
 .banner {  
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -120,8 +125,7 @@ h3, .h3 {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
-.footer {
+.marketing {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -183,16 +187,30 @@ h3, .h3 {
 
 /* Custom page footer */
 footer {
-  background-color:rgba(0, 0, 0, 0.5);
-  .info, .glyphicon-hand-down {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 4px 4px 12px;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  height: 34px;
+  color: #ffffff;
+  background-color:rgba(0, 0, 0, 0.7);
+  .info {
+    color: $primary-color;
+    margin-top: 44px;
     display: none;
   }
-}
-#footer-body .phone {
-  font-size: 14px;
-  span {
-    margin: 10px 10px 0px 0px;
-    font-size: 28px;
+  .phone {
+    small {
+      color: lightgray;
+      font-size: 14px
+    }
+    font-size: 13px;
+    span {
+      margin: 0px 10px 0px 0px;
+      font-size: 44px;
+    }
   }
 }
 
@@ -281,12 +299,6 @@ div.filters {
 }
 
 /* Press */
-.left-rail img {
-  width: 80%;
-  border: 1px solid black;
-  box-shadow: 4px 4px 3px #888888;
-  margin-top: 8px;
-}
 
 .fluid-img {
   width: 100%;
@@ -295,6 +307,16 @@ div.filters {
 .service-pic {
   width:100%;
   margin-bottom:20px;
+}
+
+.left-rail, .right-rail {
+  img {
+    width: 100%;
+    margin-bottom: 6px;
+    border:1px solid #e4e4e4;
+    box-shadow: 4px 4px 3px #888888;
+    margin-top: 8px;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
@@ -309,8 +331,7 @@ div.filters {
 
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
-  .footer {
+  .marketing {
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -321,17 +342,6 @@ div.filters {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
-  }
-}
-
-.left-rail, .right-rail {
-  h2  {
-    color: $primary-color;
-  }
-  img {
-    width: 100%;
-    margin-bottom: 6px;
-    border:1px solid #e4e4e4;
   }
 }
 
@@ -349,6 +359,7 @@ div.filters {
         }
     }
 }
+
 @media all and (max-width: 1024px) { 
     body {
         .banner {
@@ -411,86 +422,103 @@ div.filters {
     }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){ 
-    //iPhone 6 and iPhone 6+ portrait
-    .container-fluid.main {
-      margin-top: 60px;
-    }
-}
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait) { 
 
-@media all and (max-width: 320px) { 
-    body {
-        .banner {
-          background: transparent;
-          height: 86px;
-          .share {
-            margin-top: 52px;
-          }
-        }
+  body {
+      .banner {
+        background: transparent;
+        height: 86px;
         .share {
-          display: block;
-          div {
-            &.facebook {
-              background-position: -96px -32px;
-            }
-            &.twitter {
-              background-position: 0px -32px;
-            }
-            &.linkedin {
-              background-position: -32px -32px;
-            }
-            &.google {
-              background-position: -64px -32px;
-            }
+          margin-top: 52px;
+        }
+      }
+      .share {
+        display: block;
+        div {
+          &.facebook {
+            background-position: -96px -32px;
+          }
+          &.twitter {
+            background-position: 0px -32px;
+          }
+          &.linkedin {
+            background-position: -32px -32px;
+          }
+          &.google {
+            background-position: -64px -32px;
           }
         }
-        font-size: 0.9em; /* 0.8x default size */
-        padding-top: 0px;
-        padding-bottom: 30px;      
-        .container-fluid.main {
-          margin-top: 0px;
-        }    
-        .navbar-header {
-          margin-top: 4px;
-          margin-bottom: 4px;
-          .company-name {
-            color: lightgray;
+      }
+      font-size: 1.0em; /* 0.8x default size */
+      padding-top: 0px;
+      padding-bottom: 30px;      
+      .container-fluid.main {
+        margin-top: 0px;
+      }    
+      .navbar-header {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        .company-name {
+          color: lightgray;
+          font-size: 11px;
+        }
+      }
+      .navbar-toggle {
+        margin-top:2px;
+      }
+      .navbar-nav {padding-top:4px !important; padding-bottom:4px !important;}
+      .navbar .navbar-fixed-bottom {max-height:36px !important}
+
+      glyphicon.glyphicon-hand-up, glyphicon.glyphicon-hand-up {
+        padding: 0px;
+      }
+      .navbar-inverse {
+        /* background-color: rgba(0,0,0,.8); */
+        border-color: #090909;
+      }
+
+      .navbar-collapse {
+        font-size: 12px;
+        color: white;
+      }
+      .no-results {
+        font-size: 14px;
+      }
+      .range-label {
+        font-size: 1.0em;
+        top: 14px;
+        font-weight: bold;
+        margin-bottom: 0px;
+      }
+      .filters {
+        input {
+          width: 110px;
+        }
+      }
+      footer {
+        font-size: 12px;
+        padding: 8px 4px 4px 12px;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+        height: 32px;
+        color: #ffffff;
+        background-color:rgba(0, 0, 0, 0.7);
+        .info {
+          margin-top: 24px;
+          display: none;
+        }
+        .phone {
+          small {
             font-size: 11px;
+            color: lightgray;
+          }
+          font-size: 10px;
+          span {
+            margin: -4px 10px 0px 0px;
+            font-size: 28px;
           }
         }
-        .navbar-toggle {
-          margin-top:2px;
-        }
-        .navbar-nav {padding-top:4px !important; padding-bottom:4px !important;}
-        .navbar .navbar-fixed-bottom {max-height:36px !important}
-
-        glyphicon.glyphicon-hand-up, glyphicon.glyphicon-hand-up {
-          padding: 0px;
-        }
-        .navbar-inverse {
-          /* background-color: rgba(0,0,0,.8); */
-          border-color: #090909;
-        }
-
-        .navbar-collapse {
-          font-size: 12px;
-          color: white;
-        }
-        .no-results {
-          font-size: 14px;
-        }
-        .range-label {
-          font-size: 1.0em;
-          top: 14px;
-          font-weight: bold;
-          margin-bottom: 0px;
-        }
-        .filters {
-          input {
-            width: 110px;
-          }
-        }
+      }
     }
 }
-
-

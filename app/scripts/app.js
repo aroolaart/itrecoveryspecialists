@@ -140,6 +140,23 @@ $(document).ready(function(){
      $('footer .info').hide();
      $('.glyphicon-hand-up').show();
    });  
+
+   $('footer').on('click', function(){
+        if($(this).height() < 100) {
+          $('.info').show();
+          $(this).animate({
+            height: "+=100"
+          },500);
+        } else {
+          $(this).animate({
+            height: "-=100"
+          },500, function(){
+            $('.info').hide();
+            });          
+        }
+   });
+
+
 })
 
 
