@@ -142,44 +142,48 @@ $(document).ready(function(){
    });  
 
    $('footer').on('click', function(){
-        if($(this).height() < 100) {
-          $('.info').show();
-          $(this).animate({
-            height: "+=100"
-          },500);
-        } else {
-          $(this).animate({
-            height: "-=100"
-          },500, function(){
-            $('.info').hide();
-            });          
-        }
+      if($(this).height() < 100) {
+        $('.info').show();
+        $(this).animate({
+          height: "+=100"
+        },500);
+      } else {
+        $(this).animate({
+          height: "-=100"
+        },500, function(){
+          $('.info').hide();
+          });          
+      }
    });
 
 
-})
 
-$(function() {
-            $('#contactus').submit(function (event) {
-                event.preventDefault();
-                event.returnValue = false;
-                $.ajax({
-                    type: 'POST',
-                    url: '/process-email.php',
-                    data: $('#contactus').serialize(),
-                    success: function(res) {
-                        if (res == 'successful') {
-                            alert("successful");
-                        }
-                        else {
-                            alert("failed");
-                        } 
-                    },
-                    error: function () {
-                        alert("failed");
-                    }
-                });
-            });
-        });
+});
+
+
+   function submitForm() {
+  //$('#submitBtn').on('click', function(){
+    //event.preventDefault();
+    console.log( $('#contactForm').serialize() );
+    var dataString = $('#contactForm').serialize();
+    //alert("data = : " + dataString)
+    $.ajax({
+        type: 'POST',
+        url: '/clients/itrs/process-email.php',
+        data: dataString,
+        success: function(res) {
+            if (res == 'successful') {
+                alert("successful");
+            }
+            else {
+                alert("failed");
+            } 
+        },
+        error: function () {
+            alert("failed");
+        }
+    });
+  }
+  //});
 
 
