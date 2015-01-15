@@ -159,4 +159,27 @@ $(document).ready(function(){
 
 })
 
+$(function() {
+            $('#contactus').submit(function (event) {
+                event.preventDefault();
+                event.returnValue = false;
+                $.ajax({
+                    type: 'POST',
+                    url: '/process-email.php',
+                    data: $('#contactus').serialize(),
+                    success: function(res) {
+                        if (res == 'successful') {
+                            alert("successful");
+                        }
+                        else {
+                            alert("failed");
+                        } 
+                    },
+                    error: function () {
+                        alert("failed");
+                    }
+                });
+            });
+        });
+
 
