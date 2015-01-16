@@ -1,0 +1,97 @@
+body {
+    .banner {
+      background: transparent;
+      height: 86px;
+      .share {
+        margin-top: 52px;
+      }
+    }
+    .share {
+      display: block;
+      div {
+        &.facebook {
+          background-position: -96px -32px;
+        }
+        &.twitter {
+          background-position: 0px -32px;
+        }
+        &.linkedin {
+          background-position: -32px -32px;
+        }
+        &.google {
+          background-position: -64px -32px;
+        }
+      }
+    }
+    font-size: 1.0em; /* 0.8x default size */
+    padding-top: 0px;
+    padding-bottom: 30px;      
+    .container-fluid.main {
+      margin-top: 0px;
+    }    
+    .navbar-header {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      .company-name {
+        color: lightgray;
+        font-size: 11px;
+      }
+    }
+    .navbar-toggle {
+      margin-top:2px;
+    }
+    .navbar-nav {padding-top:4px !important; padding-bottom:4px !important;}
+    .navbar .navbar-fixed-bottom {max-height:36px !important}
+
+    glyphicon.glyphicon-hand-up, glyphicon.glyphicon-hand-up {
+      padding: 0px;
+    }
+    .navbar-inverse {
+      /* background-color: rgba(0,0,0,.8); */
+      border-color: #090909;
+    }
+
+    .navbar-collapse {
+      font-size: 12px;
+      color: white;
+    }
+    .no-results {
+      font-size: 14px;
+    }
+    .range-label {
+      font-size: 1.0em;
+      top: 14px;
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+    .filters {
+      input {
+        width: 110px;
+      }
+    }
+    footer {
+      font-size: 12px;
+      padding: 8px 4px 4px 12px;
+      position: fixed;
+      width: 100%;
+      bottom: 0px;
+      height: 32px;
+      color: #ffffff;
+      background-color:rgba(0, 0, 0, 0.7);
+      .info {
+        margin-top: 24px;
+        display: none;
+      }
+      .phone {
+        small {
+          font-size: 11px;
+          color: lightgray;
+        }
+        font-size: 10px;
+        span {
+          margin: -4px 10px 0px 0px;
+          font-size: 28px;
+        }
+      }
+    }
+  }

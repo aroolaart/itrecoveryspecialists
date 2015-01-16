@@ -13,16 +13,24 @@ body{
   max-width: 1170px !important;
 }
 
-.main h2 {
-  color: darken($primary-color, 30%);
+/* Navbar */
+.navbar-inverse {
+  /* background-color: rgba(0,0,0,.8); */
+  border-color: #090909;
+}
+
+.navbar-collapse {
+  font-size: 14px;
+  color: white;
 }
 
 .banner {  
+  background-image: url("../images/top-banner-1024x233.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: 0 0; 
   background-size: 100%; 
-  height: ($banner-height)px;
+  height: $banner-height + px;
   width: 100%;
 }
 
@@ -97,31 +105,15 @@ body{
   display:none;
   width: 110%;
   margin: 0px -15px 0px -15px;
-  padding-left: 100px;
   z-index: 2000;
   .label {
     color: black;
   }
+  span {
+    margin-right: 34px;
+  }
 }
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-h2, .h2 {
-  font-size: 20px;
-}
-
-h3, .h3 {
-  font-size: 16px;
-}
-
-/* Space out content a bit */
-
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing {
   padding-left: 0px;
@@ -131,6 +123,7 @@ h3, .h3 {
   margin: 15px 0px 0px 12px;
   text-decoration: none;
 }
+/* Carousel */
 
 .carousel-inner > .item > img {
     margin: 0 auto;
@@ -149,35 +142,12 @@ h3, .h3 {
   margin-bottom: 30px;
 }
 
-/* Custom page header */
-.header {
-  /* border-bottom: 1px solid #e5e5e5; */
-  margin-top: 0px;
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
 .navbar-header {
   .company-name {
     color: lightgray;
     font-size: 14px;
     margin: 20px 0px 0px 20px;  
   }
-}
-
-.navbar-inverse {
-  /* background-color: rgba(0,0,0,.8); */
-  border-color: #090909;
-}
-
-.navbar-collapse {
-  font-size: 14px;
-  color: white;
 }
 
 .navbar-nav > li > a {padding-top:10px !important; padding-bottom:6px !important;}
@@ -222,16 +192,6 @@ footer {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
 
 /* Supporting inventory content */
 div.filters {
@@ -317,206 +277,14 @@ div.filters {
   }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .banner {
-    background-image: url('../images/top_banner_1024x233.jpg');
-    height: $banner-height + px;
-  }
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 0px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-@media all and (max-width: 2000px) { /* screen size until 1200px */
-    body {
-        .banner {
-          background-image: url('../images/top-banner-2000x375.jpg');
-          height: $banner-height + px;
-        }
-        font-size: 1.5em; /* 1.5x default size */
-        padding-top: 0px;
-        padding-bottom: 40px;
-        .container.main {
-          margin-top: 0px;
-        }
-    }
-}
-
 @media all and (max-width: 1024px) { 
-    body {
-        .banner {
-          background-image: url('../images/top-banner-1024x233.jpg');
-          height: ($banner-height - 50) + px;
-        }
-        font-size: 1.2em; /* 1.2x default size */
-        padding-top: 0px;
-        padding-bottom: 30px;
-        .container-fluid.main {
-          margin-top: 30px;
-        }        
-        .share {
-          div {
-            &.facebook {
-              background-position: -96px -32px;
-            }
-            &.twitter {
-              background-position: 0px -32px;
-            }
-            &.linkedin {
-              background-position: -32px -32px;
-            }
-            &.google {
-              background-position: -64px -32px;
-            }
-          }
-        }
-    }
-}
-@media all and (max-width: 640px) { 
-    body {
-        .banner {
-          background-image: url('../images/top-banner-640x120.jpg');
-          height: ($banner-height - 90) + px;
-        }
-        font-size: 0.9em; /* 0.8x default size */
-        padding-top: 0px;
-        padding-bottom: 30px;      
-        .container-fluid.main {
-          margin-top: 0px;
-        } 
-        .share {
-          margin-top: 0px;
-          div {
-            &.facebook {
-              background-position: -96px -32px;
-            }
-            &.twitter {
-              background-position: 0px -32px;
-            }
-            &.linkedin {
-              background-position: -32px -32px;
-            }
-            &.google {
-              background-position: -64px -32px;
-            }
-          }
-        }           
-    }
+  
+  @import "tablet.scss";
+
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait) { 
 
-  body {
-      .banner {
-        background: transparent;
-        height: 86px;
-        .share {
-          margin-top: 52px;
-        }
-      }
-      .share {
-        display: block;
-        div {
-          &.facebook {
-            background-position: -96px -32px;
-          }
-          &.twitter {
-            background-position: 0px -32px;
-          }
-          &.linkedin {
-            background-position: -32px -32px;
-          }
-          &.google {
-            background-position: -64px -32px;
-          }
-        }
-      }
-      font-size: 1.0em; /* 0.8x default size */
-      padding-top: 0px;
-      padding-bottom: 30px;      
-      .container-fluid.main {
-        margin-top: 0px;
-      }    
-      .navbar-header {
-        margin-top: 4px;
-        margin-bottom: 4px;
-        .company-name {
-          color: lightgray;
-          font-size: 11px;
-        }
-      }
-      .navbar-toggle {
-        margin-top:2px;
-      }
-      .navbar-nav {padding-top:4px !important; padding-bottom:4px !important;}
-      .navbar .navbar-fixed-bottom {max-height:36px !important}
+  @import "mobile.scss";
 
-      glyphicon.glyphicon-hand-up, glyphicon.glyphicon-hand-up {
-        padding: 0px;
-      }
-      .navbar-inverse {
-        /* background-color: rgba(0,0,0,.8); */
-        border-color: #090909;
-      }
-
-      .navbar-collapse {
-        font-size: 12px;
-        color: white;
-      }
-      .no-results {
-        font-size: 14px;
-      }
-      .range-label {
-        font-size: 1.0em;
-        top: 14px;
-        font-weight: bold;
-        margin-bottom: 0px;
-      }
-      .filters {
-        input {
-          width: 110px;
-        }
-      }
-      footer {
-        font-size: 12px;
-        padding: 8px 4px 4px 12px;
-        position: fixed;
-        width: 100%;
-        bottom: 0px;
-        height: 32px;
-        color: #ffffff;
-        background-color:rgba(0, 0, 0, 0.7);
-        .info {
-          margin-top: 24px;
-          display: none;
-        }
-        .phone {
-          small {
-            font-size: 11px;
-            color: lightgray;
-          }
-          font-size: 10px;
-          span {
-            margin: -4px 10px 0px 0px;
-            font-size: 28px;
-          }
-        }
-      }
-    }
 }

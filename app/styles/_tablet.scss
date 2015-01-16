@@ -1,0 +1,52 @@
+body {
+    .banner {
+      background-image: url('../images/top-banner-1024x233.jpg');
+      height: ($banner-height - 50) + px;
+    }
+    font-size: 1.2em; /* 1.2x default size */
+    padding-top: 0px;
+    padding-bottom: 30px;
+    .container-fluid.main {
+      margin-top: 30px;
+    }        
+    .share {
+      div {
+        &.facebook {
+          background-position: -96px -32px;
+        }
+        &.twitter {
+          background-position: 0px -32px;
+        }
+        &.linkedin {
+          background-position: -32px -32px;
+        }
+        &.google {
+          background-position: -64px -32px;
+        }
+      }
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+  .container {
+    background-image: url('../images/top-banner-1024x233.jpg');
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 0px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
