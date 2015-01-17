@@ -243,13 +243,13 @@ AddDefaultCharset utf-8
     RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
 
     # added for old pages of old site - Anton
-    Redirect /clients/itrs/index.shtml /clients/itrs/index.html
-    Redirect /clients/itrs/aboutus.shtml /clients/itrs/#/about
-    Redirect /clients/itrs/products.shtml /clients/itrs/#/inventory
-    Redirect /clients/itrs/inventory.php /clients/itrs/#/inventory
-    Redirect /clients/itrs/press.shtml /clients/itrs/#/press
-    Redirect /clients/itrs/faqs.shtml /clients/itrs/#/faq
-    Redirect /clients/itrs/contact.shtml /clients/itrs/#/contact
+    Redirect /clients/itrs/index.shtml /clients/itrs/index.html [R=301,L]
+    Redirect /clients/itrs/aboutus.shtml /clients/itrs/#/about [R=301,L]
+    Redirect /clients/itrs/products.shtml /clients/itrs/#/inventory [R=301,L]
+    Redirect /clients/itrs/inventory.php /clients/itrs/#/inventory [R=301,L]
+    Redirect /clients/itrs/press.shtml /clients/itrs/#/press [R=301,L]
+    Redirect /clients/itrs/faqs.shtml /clients/itrs/#/faq [R=301,L]
+    Redirect /clients/itrs/contact.shtml /clients/itrs/#/contact [R=301,L]
 
 </IfModule>
 
