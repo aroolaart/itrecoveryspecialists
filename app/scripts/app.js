@@ -43,54 +43,18 @@ var app = angular.module('itrsApp', [
       })
       .when('/faq', {
         templateUrl: 'views/faq.html',
-      })      .when('/contact', {
+      })      
+      .when('/contact', {
         templateUrl: 'views/contact.html',
       })
+      .when('/thanks', {
+        templateUrl: 'views/thanks.html',
+      })     
       .otherwise({
         redirectTo: '/'
       });
   });
 
-  app.config(function(paginationTemplateProvider) {
-    paginationTemplateProvider.setPath('views/dirPagination.tpl.html');
-  });
-
-
-app.controller("InventoryCtrl", function($scope, $http) {
-  $scope.inventory= [];
-  //$http.jsonp('http://www.assetrecovery.com/inventory_json.php?callback=JSON_CALLBACK=?').success(function(data) { 
-  $http.get('data/data.json').success(function(data) {   
-      console.log("success!");
-      $scope.inventory = data.inventory;
-          console.log(data);
-      });    
-});
-
-app.controller("CarouselCtrl", function($scope, $http) {
-  $scope.carousel= [];
-  //$http.jsonp('http://www.assetrecovery.com/inventory_json.php?callback=JSON_CALLBACK=?').success(function(data) { 
-  $http.get('data/carousel.json').success(function(data) {   
-      console.log("success!");
-      $scope.carousel = data.carousel;
-          console.log(data);
-      });    
-});
-
-app.controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
-
-app.controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
 
 // Directive to handle menu highlighting
 app.directive("myDataToggle", function(){
@@ -107,83 +71,6 @@ app.directive("myDataToggle", function(){
     };
 });
 
-$(document).ready(function(){
-
-  $("#maincarousel").carousel();
-  $('.navbar-toggle').on('click',function(){
-    $('.share.dropdown').slideUp("fast");
-    $('.banner .share').css("visibility","visible");      
-  });
-  $(window).on('scroll', function() {
-    var scrollPosition = $(this).scrollTop();
-    if (scrollPosition >= 100 && $('.container-fluid .share').is(":hidden")) {
-        //alert("scrolled");
-        $('.banner .share').css("visibility","hidden");
-        $('.share.dropdown').slideDown("slow");
-        //$(this).off('scroll');
-    }
-    if (scrollPosition <= 50 && $('.container-fluid .share').is(":visible")) {
-        //alert("scrolled");
-        $('.banner .share').css("visibility","visible");
-        $('.share.dropdown').slideUp("fast");
-        //$(this).off('scroll');
-    }    
-  });
-
-  $('.glyphicon-hand-up').on('click',function(){
-     $(this).hide();
-     $('footer .info').show();
-     $('.glyphicon-hand-down').show();
-   });
-   $('.glyphicon-hand-down').on('click',function(){
-     $(this).hide();
-     $('footer .info').hide();
-     $('.glyphicon-hand-up').show();
-   });  
-
-   $('footer').on('click', function(){
-      if($(this).height() < 100) {
-        $('.info').show();
-        $(this).animate({
-          height: "+=100"
-        },500);
-      } else {
-        $(this).animate({
-          height: "-=100"
-        },500, function(){
-          $('.info').hide();
-          });          
-      }
-   });
-
-
-
+app.config(function(paginationTemplateProvider) {
+  paginationTemplateProvider.setPath('views/dirPagination.tpl.html');
 });
-
-
-   function submitForm() {
-  //$('#submitBtn').on('click', function(){
-    //event.preventDefault();
-    console.log( $('#contactForm').serialize() );
-    var dataString = $('#contactForm').serialize();
-    //alert("data = : " + dataString)
-    $.ajax({
-        type: 'POST',
-        url: '/clients/itrs/process-email.php',
-        data: dataString,
-        success: function(res) {
-            if (res == 'successful') {
-                alert("successful");
-            }
-            else {
-                alert("failed");
-            } 
-        },
-        error: function () {
-            alert("failed");
-        }
-    });
-  }
-  //});
-
-

@@ -277,6 +277,12 @@ div.filters {
   }
 }
 
+#thanks {
+  h2.error {
+    color: red;
+  }
+}
+
 @media all and (max-width: 1024px) { 
   
   @import "tablet.scss";
