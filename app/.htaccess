@@ -174,6 +174,7 @@ ErrorDocument 404 /404.html
     AddType text/vtt                                    vtt
     AddType text/x-component                            htc
     AddType text/x-vcard                                vcf
+    AddType application/pdf                             pdf 
 
 </IfModule>
 
@@ -240,6 +241,8 @@ AddDefaultCharset utf-8
     RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+    Redirect /clients/itrs/about.shtml /clients/itrs/#/about
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
