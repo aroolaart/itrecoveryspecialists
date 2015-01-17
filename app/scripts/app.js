@@ -19,6 +19,7 @@ var app = angular.module('itrsApp', [
     'ngTouch'
   ])
   .config(function ($routeProvider) {
+    //$locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -47,14 +48,28 @@ var app = angular.module('itrsApp', [
       .when('/contact', {
         templateUrl: 'views/contact.html',
       })
-      .when('/thanks', {
-        templateUrl: 'views/thanks.html',
+      .when('/financialtimes', {
+        templateUrl: 'views/financialtimes.html',
       })     
+      .when('/ciomag', {
+        templateUrl: 'views/ciomag.html',
+      })           
+      .when('/thestreet', {
+        templateUrl: 'views/thestreet.html',
+      })           
+      .when('/barrons', {
+        templateUrl: 'views/barrons.html',
+      })           
+      .when('/wsj', {
+        templateUrl: 'views/wsj.html',
+      })           
+      .when('/grant', {
+        templateUrl: 'views/grant.html',
+      })           
       .otherwise({
         redirectTo: '/'
       });
   });
-
 
 // Directive to handle menu highlighting
 app.directive("myDataToggle", function(){
