@@ -18,8 +18,8 @@ var app = angular.module('itrsApp', [
     'angularUtils.directives.dirPagination',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    //$locationProvider.html5Mode(true);
+  .config(function ($locationProvider, $routeProvider) {
+    //$locationProvider.hashPrefix('!');
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
