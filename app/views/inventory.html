@@ -1,62 +1,62 @@
-
-<h2>Search our inventory database</h2>  
-<p class="lead">Please note that this is not a complete list of products we have in our inventory.  Please <a href="#/contact">contact us <span class="glyphicon glyphicon-earphone"></span></a> if you need help finding something you are looking for.</p>
-<p>Type in the search field to narrow your search.</p>
-<div class="filters row">
-  <div class="col-xs-6">
-    Search: <input ng-model="search.$"> 
+<div ng-controller="InventoryCtrl">
+  <h2>Search our inventory database</h2>  
+  <p class="lead">Please note that this is not a complete list of products we have in our inventory.  Please <a href="#/contact">contact us <span class="glyphicon glyphicon-earphone"></span></a> if you need help finding something you are looking for.</p>
+  <p>Type in the search field to narrow your search.</p>
+  <div class="filters row">
+    <div class="col-xs-6">
+      Search: <input ng-model="search.$"> 
+    </div>
+    <div class="col-xs-6">
+      Items per page: 
+      <select ng-model='limit' ng-init="limit=20">
+        <option value='10'>Show 10 per page</option>
+        <option value='15'>Show 15 per page</option>
+        <option value='20'>Show 20 per page</option>
+        <option value='50'>Show 50 per page</option>
+        <option value='100'>Show 100 per page</option>
+        <option value='200'>Show 200 per page</option>
+      </select>
+    </div>
   </div>
-  <div class="col-xs-6">
-    Items per page: 
-    <select ng-model='limit' ng-init="limit=20">
-      <option value='10'>Show 10 per page</option>
-      <option value='15'>Show 15 per page</option>
-      <option value='20'>Show 20 per page</option>
-      <option value='50'>Show 50 per page</option>
-      <option value='100'>Show 100 per page</option>
-      <option value='200'>Show 200 per page</option>
-    </select>
-  </div>
-</div>
 
-<div class="row">
-  <div class=" no-results col-xs-offset-2 col-xs-8" ng-hide="inventory" ng-show="(inventory | filter:search).length == 0">
-    <h5>Sorry, no results were found, please modify your search.</h5>
+  <div class="row">
+    <div class=" no-results col-xs-offset-2 col-xs-8" ng-hide="inventory" ng-show="(inventory | filter:search).length == 0">
+      <h5>Sorry, no results were found, please modify your search.</h5>
+    </div>
   </div>
-</div>
 
-<div class="row" ng-show="(inventory | filter:search).length > 0">
-  <dir-pagination-controls class="col-xs-12"></dir-pagination-controls>
-    <dir class="col-xs-12 titles">
-      <div class="col-xs-2 mfg">
-        MAN
+  <div class="row" ng-show="(inventory | filter:search).length > 0">
+    <dir-pagination-controls class="col-xs-12"></dir-pagination-controls>
+      <dir class="col-xs-12 titles">
+        <div class="col-xs-2 mfg">
+          MAN
+        </div>
+        <div class="col-xs-3 model">
+          MODEL
+        </div>     
+        <div class="col-xs-5 description">
+          DESCRIPTION
+        </div> 
+        <div class="col-xs-1 qty">
+          QTY
+        </div> 
+      </dir>    
+  </div>
+
+  <div class="row inventory item" ng-cloak dir-paginate="item in inventory | filter:search:strict | itemsPerPage:limit ">
+    <div class="col-xs-12">
+      <div class="col-xs-2 mfg col">
+        {{item.mfg}}
       </div>
-      <div class="col-xs-3 model">
-        MODEL
+      <div class="col-xs-3 model col">
+        {{item.model}}
       </div>     
-      <div class="col-xs-5 description">
-        DESCRIPTION
+      <div class="col-xs-5 description col">
+        {{item.description}}
       </div> 
-      <div class="col-xs-1 qty">
-        QTY
-      </div> 
-    </dir>    
-</div>
-
-<div class="row inventory item" ng-cloak dir-paginate="item in inventory | filter:search:strict | itemsPerPage:limit ">
-  <div class="col-xs-12">
-    <div class="col-xs-2 mfg col">
-      {{item.mfg}}
-    </div>
-    <div class="col-xs-3 model col">
-      {{item.model}}
+      <div class="col-xs-1 qty col">
+        {{item.qty}}
+      </div>
     </div>     
-    <div class="col-xs-5 description col">
-      {{item.description}}
-    </div> 
-    <div class="col-xs-1 qty col">
-      {{item.qty}}
-    </div>
-  </div>     
+  </div>
 </div>
-

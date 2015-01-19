@@ -1,37 +1,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/about</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/about.php</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/mgmt</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/mgmt.php</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://www.itrecoveryspecialists.com/about.php</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/services</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/services</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/press</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/press.php</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/contact</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/contact.php</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/faq</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/faq.php</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>http://www.itrecoveryspecialists.com/#!/inventory</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://www.itrecoveryspecialists.com/inventory.php</loc>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset> 
