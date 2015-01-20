@@ -243,12 +243,11 @@ AddDefaultCharset utf-8
     RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
 
     # added for old pages of old site - Anton
-    Redirect /index.shtml /index.php
-    Redirect /aboutus.shtml /about.php 
-    Redirect /products.shtml /inventory.php 
-    Redirect /press.shtml /press.php 
-    Redirect /faqs.shtml /faq.php 
-    Redirect /contact.shtml /contact.php 
+    RewriteRule ^index\.shtml http://itrecoveryspecialists.com/index.php [NC,R]
+    RewriteRule ^about\.shtml http://itrecoveryspecialists.com/about.php [NC,R]
+    RewriteRule ^services\.shtml http://itrecoveryspecialists.com/services.php [NC,R]
+    RewriteRule ^products\.shtml http://itrecoveryspecialists.com/inventory.php [NC,R]
+    RewriteRule ^contact\.shtml http://itrecoveryspecialists.com/contact.php [NC,R]
 
 </IfModule>
 

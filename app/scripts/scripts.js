@@ -49,28 +49,37 @@ $(document).ready(function(){
 });
 
 function submitForm($scope,$location) {
-console.log( $('#contactForm').serialize() );
-var dataString = $('#contactForm').serialize();
-//console.log("data = : " + dataString)
-$.ajax({
-    type: 'POST',
-    url: 'services/process-email.php',
-    data: dataString,
-    success: function(res) {
-        if (res == 'successful') {
-            //alert("successful");
-            window.location=('thanks.php');
-        }
-        else {
-            //alert("failed");
-            window.location=('thanks.php');
-        } 
-    },
-    error: function () {
-      //alert("failed outer");
-      //$("html, body").animate({ scrollTop: 0 }, "slow");
-      window.location=('thanks.php');
-    }
-});
+  //console.log( $('#contactForm').serialize() );
+  var dataString = $('#contactForm').serialize();
+  //console.log("data = : " + dataString)
+  $.ajax({
+      type: 'POST',
+      url: 'services/process-email.php',
+      data: dataString,
+      success: function(res) {
+          if (res == 'successful') {
+              //alert("successful");
+              window.location=('thanks.php');
+          }
+          else {
+              //alert("failed");
+              window.location=('thanks.php');
+          } 
+      },
+      error: function () {
+        //alert("failed outer");
+        //$("html, body").animate({ scrollTop: 0 }, "slow");
+        window.location=('thanks.php');
+      }
+  });
 }
+
+var url = window.location;
+// Will only work if string in href matches with location
+$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+// Will also work for relative and absolute hrefs
+$('ul.nav a').filter(function() {
+    return this.href == url;
+}).parent().addClass('active');
 

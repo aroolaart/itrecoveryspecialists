@@ -344,10 +344,14 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            '*.php',
             '*.xml',
+            'services/**',
+            'data/**',
+            'downloads/**',
+            'video/**',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'images/{,*/}*.{webp}'
           ]
         }, {
           expand: true,
@@ -434,7 +438,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
+    //'filerev',
     'usemin',
     'htmlmin'
   ]);
