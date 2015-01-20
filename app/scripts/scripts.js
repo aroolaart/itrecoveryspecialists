@@ -54,20 +54,22 @@ var dataString = $('#contactForm').serialize();
 //console.log("data = : " + dataString)
 $.ajax({
     type: 'POST',
-    url: '/clients/itrs/process-email.php',
+    url: 'services/process-email.php',
     data: dataString,
     success: function(res) {
         if (res == 'successful') {
-            alert("successful");
+            //alert("successful");
+            window.location=('thanks.php');
         }
         else {
-            alert("failed");
+            //alert("failed");
+            window.location=('thanks.php');
         } 
     },
     error: function () {
-      alert("failed outer");
+      //alert("failed outer");
       //$("html, body").animate({ scrollTop: 0 }, "slow");
-      window.location=('#/thanks');
+      window.location=('thanks.php');
     }
 });
 }
