@@ -5,7 +5,11 @@
     $message = $_POST['comments'];
     $recipient = "anton.roolaart@gmail.com";
     $subject = "ITRS Comments Received";
-    $formcontent = "From: $name <br/> Email: $email <br/> Telephone: $phone <hr><br/><br/> Message: <br/><br/>$message";
+    $company = $_POST['company'];
+    $address = $_POST['address'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $formcontent = "From: $name <br/> Email: $email <br/> Telephone: $phone <br/> Company: $company<br/>Address: $address<br/>State: $state  Zip: $zip<hr><br/><br/> Message: <br/><br/>$message";
 
     $headers = "From: " .$email . "\r\n";
     $headers .= "Reply-To: ". $email . "\r\n";

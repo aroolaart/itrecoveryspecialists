@@ -20,7 +20,7 @@ body{
 }
 
 .navbar-collapse {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
 }
 
@@ -261,6 +261,14 @@ div.filters {
 }
 
 /* Press */
+
+.press-article {
+  padding: 0px 30px 0px 30px;
+  p {
+    color: $primary-color;
+    font-style: italic;
+  }
+}
 
 .fluid-img {
   width: 100%;

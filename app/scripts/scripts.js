@@ -74,6 +74,7 @@ function submitForm($scope,$location) {
   });
 }
 
+
 var url = window.location;
 // Will only work if string in href matches with location
 $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
@@ -82,4 +83,13 @@ $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
 $('ul.nav a').filter(function() {
     return this.href == url;
 }).parent().addClass('active');
+
+//removed highlighted About Us
+if(!(url.pathname.match(/about/g) || url.pathname.match(/mgmt/g))) {
+  $('ul.nav li.dropdown').removeClass("active");
+} 
+
+if(url.href.match(/press/g)) {
+  $('ul.nav a[href="press.php"]').parent().addClass("active");
+} 
 
