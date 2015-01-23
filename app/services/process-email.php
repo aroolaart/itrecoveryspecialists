@@ -3,7 +3,7 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $message = $_POST['comments'];
-    $recipient = "anton.roolaart@gmail.com";
+    $recipient = "john@itrecoveryspecialists.com";
     $subject = "ITRS Comments Received";
     $company = $_POST['company'];
     $address = $_POST['address'];
@@ -12,7 +12,7 @@
     $formcontent = "From: $name <br/> Email: $email <br/> Telephone: $phone <br/> Company: $company<br/>Address: $address<br/>State: $state  Zip: $zip<hr><br/><br/> Message: <br/><br/>$message";
 
     $headers = "From: " .$email . "\r\n";
-    $headers .= "Reply-To: ". $email . "\r\n";
+    $headers .= 'Cc: anton.roolaart@gmail.com' . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
