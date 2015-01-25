@@ -74,6 +74,7 @@ function submitForm($scope,$location) {
   });
 }
 
+// Handle hightlight of menu
 
 var url = window.location;
 // Will only work if string in href matches with location
@@ -92,4 +93,5 @@ if(!(url.pathname.match(/about/g) || url.pathname.match(/mgmt/g))) {
 if(url.href.match(/press/g)) {
   $('ul.nav a[href="press.php"]').parent().addClass("active");
 } 
+
 
