@@ -2,11 +2,13 @@
 /* colors */
 
 $primary-color: #4A7AA2;
+$footer-info-color: #A2D8EF;
 $row-dark-color: #B7C8D8;
+$heading-color: $primary-color;
 
 h1, h2, h3, h4, h5 {
-  color: darken($primary-color, 0%);
-  font-family: 'Pontano Sans', sans-serif;
+  color: $primary-color;
+  font-family: 'Pontano Sans', Arial, sans-serif;
 }
 h2, .h2 {
   font-size: 20px;
