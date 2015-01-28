@@ -15,6 +15,7 @@
     $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
     $message .= "<tr style='background: #eee;'><td><strong>Date:</strong> </td><td>Message received: " . $now . "</td></tr>";
     $message .= "<tr><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+    $message .= "<tr><td><strong>Phone:</strong> </td><td>" . $phone . "</td></tr>";
     $message .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
     $message .= "<tr><td><strong>Company:</strong> </td><td>" . $company . "</td></tr>";
     $message .= "<tr><td><strong>Address:</strong> </td><td>" . $address . "</td></tr>";

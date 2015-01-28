@@ -19,3 +19,21 @@ $(document).ready(function(){
 	$("a[title~='Linkedin']").attr("href",shareURLs.site[0].linkedin);
 	$("a[title~='Google']").attr("href",shareURLs.site[0].google);
 });
+
+// HANDLE WEB BUTTON CLICKS FOR SHAARE
+
+$("a[title~='Facebook']").on("click", function(){
+	ga('send', 'event', 'button', 'click', 'Facebook');
+});
+
+$("a[title~='Twitter']").on("click", function(){
+	ga('send', 'event', 'button', 'click', 'Twitter');
+});
+
+$("a[title~='LinkedIn']").on("click", function(){
+	ga('send', 'event', 'button', 'click', 'Linkedin');
+});
+
+$("a[title~='Google']").on("click", function(){
+	ga('send', 'event', 'button', 'click', 'GooglePlus');	
+});
