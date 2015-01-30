@@ -9,6 +9,8 @@
     $address = $_POST['address'];
     $state = $_POST['state'];
     $zip = $_POST['zip'];
+    $country = $_POST['country'];
+    $interest = $_POST['interest'];
     $now = date('l jS \of F Y h:i:s A');
 
     $message = '<html><body>';
@@ -21,6 +23,8 @@
     $message .= "<tr><td><strong>Address:</strong> </td><td>" . $address . "</td></tr>";
     $message .= "<tr><td><strong>State:</strong> </td><td>" . $state . "</td></tr>";
     $message .= "<tr><td><strong>Zip:</strong> </td><td>" . $zip . "</td></tr>";
+    $message .= "<tr><td><strong>Country:</strong> </td><td>" . $country . "</td></tr>";
+    $message .= "<tr><td><strong>Interested in:</strong> </td><td>" . $interest . "</td></tr>";
     $message .= "<tr><td><strong>Company:</strong> </td><td>" . $company . "</td></tr>";        
     $message .= "<tr><td><strong>Message:</strong> </td><td>" . htmlentities($comments) . "</td></tr>";
     $message .= "</table>";
