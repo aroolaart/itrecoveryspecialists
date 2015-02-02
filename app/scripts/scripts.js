@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+  $('img[src$="ciscos-worse-nightmare-1-sm.jpg')
+      .wrap('<span style="display:inline-block"></span>')
+      .css('display', 'block')
+      .parent()
+      .zoom({url: 'images/press/ciscos-worse-nightmare-1.jpg'});
+
+  $('img[src$="ciscos-worse-nightmare-2-sm.jpg')
+      .wrap('<span style="display:inline-block"></span>')
+      .css('display', 'block')
+      .parent()
+      .zoom({url: 'images/press/ciscos-worse-nightmare-2.jpg'});
+
   $("#maincarousel").carousel();
   $('.navbar-toggle').on('click',function(){
     $('.share.dropdown').slideUp("fast");

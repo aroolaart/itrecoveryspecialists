@@ -269,6 +269,15 @@ div.filters {
     color: $primary-color;
     font-style: italic;
   }
+  &.cisco {
+    img {
+      width: 95%;
+      margin-bottom: 12px;
+      :hover {
+        cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
+      }
+    }
+  }
 }
 
 .fluid-img {
@@ -288,6 +297,13 @@ div.filters {
     box-shadow: 4px 4px 3px #888888;
     margin-top: 8px;
   }
+}
+
+/* FAQ */
+
+h4.panel-title {
+  color: $primary-color;
+  font-weight: bold;
 }
 
 #thanks {
