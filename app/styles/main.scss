@@ -264,6 +264,10 @@ div.filters {
 /* Press */
 
 .press-article {
+  .leader {
+    width: 100%;
+    margin-bottom: 12px;
+  }
   padding: 0px 30px 0px 30px;
   p {
     color: $primary-color;
@@ -271,7 +275,7 @@ div.filters {
   }
   &.cisco {
     img {
-      width: 95%;
+      width: 100%;
       margin-bottom: 12px;
       :hover {
         cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
