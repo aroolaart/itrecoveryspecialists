@@ -12,6 +12,12 @@ $(document).ready(function(){
       .parent()
       .zoom({url: 'images/press/ciscos-worse-nightmare-2.jpg'});
 
+  $('img[src$="financial-times-2-sm.jpg')
+      .wrap('<span style="display:inline-block"></span>')
+      .css('display', 'block')
+      .parent()
+      .zoom({url: 'images/press/financial-times-2.jpg'});
+
   $("#maincarousel").carousel();
   $('.navbar-toggle').on('click',function(){
     $('.share.dropdown').slideUp("fast");
