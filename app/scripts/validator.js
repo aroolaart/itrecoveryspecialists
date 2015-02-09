@@ -1,10 +1,10 @@
 /* ========================================================================
- * Bootstrap (plugin): validator.js v0.6.0
+ * Bootstrap (plugin): validator.js v0.7.2
  * ========================================================================
  * The MIT License (MIT)
  *
- * Copyright (c) 2013 Spiceworks, Inc.
- * Made by Cina Saffary (@1000hz) in the style of Bootstrap 3 era @fat
+ * Copyright (c) 2013 Cina Saffary.
+ * Made by @1000hz in the style of Bootstrap 3 era @fat
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -47,7 +47,7 @@
       var target = $this.data('match')
 
       $(target).on('input.bs.validator', function (e) {
-        $this.val() && $this.trigger('input')
+        $this.val() && $this.trigger('input.bs.validator')
       })
     })
   }
@@ -135,7 +135,9 @@
 
     if (!errors.length && $el.val() && $el.data('remote')) {
       this.defer($el, function () {
-        $.get($el.data('remote'), [$el.attr('name'), $el.val()].join('='))
+        var data = {}
+        data[$el.attr('name')] = $el.val()
+        $.get($el.data('remote'), data)
           .fail(function (jqXHR, textStatus, error) { errors.push(getErrorMessage('remote') || error) })
           .always(function () { deferred.resolve(errors)})
       })
@@ -148,7 +150,7 @@
     var delay = this.options.delay
 
     this.options.delay = 0
-    this.$element.find(':input').trigger('input')
+    this.$element.find(':input').trigger('input.bs.validator')
     this.options.delay = delay
 
     return this
@@ -226,8 +228,13 @@
       .off('.bs.validator')
 
     this.$element.find(':input')
-      .removeData(['bs.validator.errors', 'bs.validator.deferred', 'bs.validator.timeout'])
       .off('.bs.validator')
+      .removeData(['bs.validator.errors', 'bs.validator.deferred'])
+      .each(function () {
+        var $this = $(this)
+        var timeout = $this.data('bs.validator.timeout')
+        window.clearTimeout(timeout) && $this.removeData('bs.validator.timeout')
+      })
 
     this.$element.find('.help-block.with-errors').each(function () {
       var $this = $(this)

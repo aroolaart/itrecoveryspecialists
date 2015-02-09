@@ -3,7 +3,8 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $comments = $_POST['comments'];
-    $recipient = "john@itrecoveryspecialists.com";
+    //$recipient = "john@itrecoveryspecialists.com";
+    $recipient = "anton.roolaart@gmail.com";
     $subject = "ITRS Comments Received";
     $company = $_POST['company'];
     $address = $_POST['address'];

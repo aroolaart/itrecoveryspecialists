@@ -343,7 +343,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            '*.html',
+            '404.html',
             '*.php',
             '*.xml',
             'services/**',
@@ -353,6 +353,14 @@ module.exports = function (grunt) {
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}'
           ]
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>/',
+          src: 'index.html',
+          rename: function(dest, src) {
+            return dest + src.replace("index","template");
+          }
         }, {
           expand: true,
           cwd: '.tmp/images',

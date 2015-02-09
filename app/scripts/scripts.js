@@ -64,33 +64,37 @@ $(document).ready(function(){
           });          
       }
    });
+
 });
 
-function submitForm($scope,$location) {
-  //console.log( $('#contactForm').serialize() );
-  var dataString = $('#contactForm').serialize();
-  //console.log("data = : " + dataString)
-  $.ajax({
-      type: 'POST',
-      url: 'services/process-email.php',
-      data: dataString,
-      success: function(res) {
-          if (res == 'successful') {
-              //alert("successful");
-              window.location=('thanks.php');
+
+  $('#contactForm').validator().on('submit', function(e) {
+
+    //if(e.isDefaultPrevented())  {
+      //alert("The form is not completed correctly");
+    //} else {
+      var dataString = $('#contactForm').serialize();
+      $.ajax({
+          type: 'POST',
+          url: 'services/process-email.php',
+          data: dataString,
+          success: function(res) {
+              if (res == 'successful') {
+                  //alert("successful");
+                  window.location=('thanks.php');
+              }
+              else {
+                  //alert("failed");
+                  window.location=('thanks.php');
+              } 
+          },
+          error: function () {
+            window.location=('thanks.php');
           }
-          else {
-              //alert("failed");
-              window.location=('thanks.php');
-          } 
-      },
-      error: function () {
-        //alert("failed outer");
-        //$("html, body").animate({ scrollTop: 0 }, "slow");
-        window.location=('thanks.php');
-      }
+      });
+    //}
   });
-}
+
 
 // Handle hightlight of menu
 

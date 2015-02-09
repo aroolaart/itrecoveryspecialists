@@ -216,32 +216,35 @@ div.filters {
     font-size: 14px !important;  
   }
 }
+.inventoryTable {
+  margin-top: 24px;
   .titles {
     color: white;
-    font-size:1.2em;
-    font-wieght:bold;
     background-color: darken( $row-dark-color, 20% );
-    border: 1px solid gray;
     margin-bottom: 0px;
   }
-.inventory {
-  &div {
-    /* float: left; */
-  }
-  .mfg, .model, .description, .qty {
-    vertical-align: top;
-  }
-  &.item {
-    border-bottom: 1px solid darken( $row-dark-color, 20% );
-    &:hover {
-      background: white;
-      border-bottom: 1px solid black;
+  .inventory {
+    .mfg, .model, .description, .qty {
+      vertical-align: top;
+    }
+    &.item {
+      border-bottom: 1px solid darken( $row-dark-color, 20% );
+      &:hover {
+        background: white;
+        border-bottom: 1px solid black;
+      }
     }
   }
+  /*  colored rows  */
+  .item:nth-child(even) {
+    background: $row-dark-color;
+  }
+  .item:nth-child(odd) {    
+    background: lighten( $row-dark-color, 10% );
+  }
 }
-
 .no-results {
-  margin-top: 12px;
+  margin-top: 24px;
   border-radius: 4px;
   h5 {
     color: red;
@@ -249,17 +252,6 @@ div.filters {
   }
 }
 
-.item > div {
-  padding: 4px 0px;
-  /* border: 1px solid darken( $row-dark-color, 10% );; */
-}
-/*  colored rows  */
-.item:nth-child(even) {
-  background: $row-dark-color;
-}
-.item:nth-child(odd) {    
-  background: lighten( $row-dark-color, 10% );
-}
 
 /* Press */
 
