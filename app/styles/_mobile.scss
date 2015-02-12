@@ -78,13 +78,21 @@ body {
         width: 110px;
       }
     }
+
+    /* PRESS */
+    .press-links {
+      li {
+        font-size: 1.4em;
+      }
+    }
+
     footer {
       font-size: 12px;
-      padding: 8px 4px 4px 12px;
+      padding: 6px 4px 4px 12px;
       position: fixed;
       width: 100%;
       bottom: 0px;
-      height: 32px;
+      height: 38px;
       color: #ffffff;
       background-color:rgba(0, 0, 0, 0.7);
       .info {
