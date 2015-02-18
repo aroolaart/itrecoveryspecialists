@@ -68,32 +68,44 @@ $(document).ready(function(){
 });
 
 
-  $('#contactForm').validator().on('submit', function(e) {
-
-    //if(e.isDefaultPrevented())  {
-      //alert("The form is not completed correctly");
-    //} else {
-      var dataString = $('#contactForm').serialize();
-      $.ajax({
-          type: 'POST',
-          url: 'services/process-email.php',
-          data: dataString,
-          success: function(res) {
-              if (res == 'successful') {
-                  //alert("successful");
-                  window.location=('thanks.php');
-              }
-              else {
-                  //alert("failed");
-                  window.location=('thanks.php');
-              } 
-          },
-          error: function () {
-            window.location=('thanks.php');
-          }
-      });
-    //}
-  });
+$('#contactForm').validator().on('submit', function(e) {
+  var reg_email = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  var reg_phone = /^[+]?([0-9]*[\.\s\-\(\)]|[0-9]+){3,24}$/;
+  //if(e.isDefaultPrevented())  {
+  if($('#name').val().length < 2) {
+    alert("The name must be at least 2 characters");
+    $('#name').focus();
+    return;
+  } else if (!($('#email').val().match(reg_email))) {
+    alert("The email address is not completed correctly");
+    $('#email').focus();
+    return;
+  } else if (!($('#phone').val().match(reg_phone))) {
+    alert("The phone number is not completed correctly");
+    $('#phone').focus();
+    return;
+  } else {
+    var dataString = $('#contactForm').serialize();
+    $.ajax({
+        type: 'POST',
+        url: 'services/process-email.php',
+        data: dataString,
+        success: function(res) {
+            if (res == 'successful') {
+                //alert("successful");
+                window.location=('thanks.php');
+            }
+            else {
+                //alert("failed");
+                window.location=('thanks.php');
+            } 
+        },
+        error: function () {
+          window.location=('thanks.php');
+        }
+    });
+  }
+});
 
 
 // Handle hightlight of menu
@@ -116,6 +128,11 @@ if(url.href.match(/press/g)) {
   $('ul.nav a[href="press.php"]').parent().addClass("active");
 } 
 
+// Eventr Tracking
+
+$('#submit-btn').on("click", function(){
+  ga('send', 'event', 'button', 'click', 'ContactFormSubmit');  
+});
 
 
 

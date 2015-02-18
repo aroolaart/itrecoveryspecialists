@@ -20,7 +20,7 @@ $(document).ready(function(){
 	$("a[title~='Google']").attr("href",shareURLs.site[0].google);
 });
 
-// HANDLE WEB BUTTON CLICKS FOR SHAARE
+// HANDLE WEB BUTTON CLICKS FOR SHARE
 
 $("a[title~='Facebook']").on("click", function(){
 	ga('send', 'event', 'button', 'click', 'Facebook');
@@ -37,3 +37,5 @@ $("a[title~='LinkedIn']").on("click", function(){
 $("a[title~='Google']").on("click", function(){
 	ga('send', 'event', 'button', 'click', 'GooglePlus');	
 });
+
+
