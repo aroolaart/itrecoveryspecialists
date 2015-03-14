@@ -1,17 +1,26 @@
 <?php
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $comments = $_POST['comments'];
-    $recipient = "john@itrecoveryspecialists.com";
-    //$recipient = "anton.roolaart@gmail.com";
-    $subject = "ITRS Comments Received";
-    $company = $_POST['company'];
-    $address = $_POST['address'];
-    $state = $_POST['state'];
-    $zip = $_POST['zip'];
-    $country = $_POST['country'];
-    $interest = $_POST['interest'];
+
+	// let's help with spam and clean input fields
+	function test_input($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
+
+    $name = test_input($_POST['name']);
+    $email = test_input($_POST['email']);
+    $phone = test_input($_POST['phone']);
+    $comments = test_input($_POST['comments']);
+    $recipient_email = "john@itrecoveryspecialists.com";
+    //$recipient_email = "anton.roolaart@gmail.com";
+	$subject = "ITRS FORM SUBMITTED";
+    $company = test_input($_POST['company']);
+    $address = test_input($_POST['address']);
+    $state = test_input($_POST['state']);
+    $zip = test_input($_POST['zip']);
+    $country = test_input($_POST['country']);
+    $interest = test_input($_POST['interest']);
     $now = date('l jS \of F Y h:i:s A');
 
     $message = '<html><body>';
@@ -37,7 +46,7 @@
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    if(mail($recipient, $subject, $message, $headers))
+    if(mail($recipient_email, $subject, $message, $headers))
     {
         echo "successful";
     }
